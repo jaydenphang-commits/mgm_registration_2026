@@ -1,0 +1,8 @@
+# Ignore the raw Excel and CSV data sheets
+*.xlsx
+*.csv
+generated_qrs/
+
+# Ignore any local system files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGM 2026 Registration Desk</title>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 15px;
+            background-color: #f4f6f9;
+            text-align: center;
+        }
+        h1 { color: #2c3e50; margin-bottom: 5px; font-size: 24px;}
+        .subtitle { color: #7f8c8d; margin-top: 0; margin-bottom: 20px; font-size: 14px;}
+        
+        #scanner-container {
+            max-width: 450px;
+            margin: 0 auto;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        #reader { width: 100%; border-radius: 8px; overflow: hidden; background: #eee;}
+        
+        #status-msg {
+            margin: 10px;
+            font-size: 14px;
+            color: #e67e22;
+            font-weight: bold;
+        }
+
+        #result-card {
+            max-width: 450px;
+            margin: 20px auto 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            display: none; 
+            text-align: left;
+        }
+        .guest-name { font-size: 24px; font-weight: bold; color: #1a252f; margin-bottom: 5px; }
+        .guest-meta { font-size: 14px; color: #555; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;}
+        
+        .badge {
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+        .concert-badge { background-color: #2ecc71; }
+        .no-concert-badge { background-color: #95a5a6; }
+        
+        .workshop-title { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #7f8c8d; font-weight: bold; margin-top: 15px;}
+        
+        /* The specific text description layout */
+        .workshop-name-display {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 5px 0 10px 0;
+            background: #f8f9fa;
+            padding: 10px;
+            border-left: 4px solid #34495e;
+            border-radius: 4px;
+        }
+
+        .wristband-alert {
+            font-size: 20px;
+            font-weight: 900;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 3px dashed #333;
+            margin-top: 5px;
+        }
+        
+        .warning-banner {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .action-btn {
+            width: 100%;
+            padding: 12px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MGM 2026 Registration</h1>
+    <p class="subtitle">Volunteer Scanning Console</p>
+
+    <div id="scanner-container">
+        <div id="status-msg">Connecting to database...</div>
+        <div id="reader"></div>
+    </div>
+
+    <div id="result-card">
+        <div id="checkin-warning" class="warning-banner" style="display:none;">⚠️ ALREADY CHECKED IN!</div>
+        <div class="guest-name" id="lbl-name">John Doe</div>
+        <div class="guest-meta" id="lbl-meta">ID: MGM2026_1001</div>
+        
+        <div id="badge-concert" class="badge concert-badge">
+            <span>🎟️ Concert Access:</span> <span>GIVE CONCERT WRISTBAND</span>
+        </div>
+
+        <div class="workshop-title">Registered Workshop Name:</div>
+        <div id="lbl-workshop-name" class="workshop-name-display">Workshop Text Goes Here</div>
+
+        <div class="workshop-title">Required Wristband Color:</div>
+        <div id="lbl-workshop-box" class="wristband-alert">Loading...</div>
+
+        <button class="action-btn" onclick="resetScanner()">NEXT GUEST</button>
+    </div>
+
+    <script>
+        let attendeesDatabase = [];
+        let html5QrCode;
+        const statusMsg = document.getElementById('status-msg');
+
+        fetch('attendees_db.json')
+            .then(response => {
+                if (!response.ok) throw new Error("Could not find attendees_db.json file.");
+                return response.json();
+            })
+            .then(data => {
+                attendeesDatabase = data;
+                statusMsg.innerText = "Database Loaded. Initializing camera permission request...";
+                initScanner();
+            })
+            .catch(err => {
+                statusMsg.style.color = "red";
+                statusMsg.innerText = "❌ Database Error: " + err.message;
+            });
+
+        function getWristbandColor(workshopName) {
+            if (!workshopName || workshopName.includes("None of the above")) {
+                return { text: "⚠️ NO WORKSHOP WRISTBAND", bg: "#f1f2f6", textClr: "#2f3542" };
+            }
+            if (workshopName.includes("Worship Leading")) return { text: "🔵 BLUE WRISTBAND", bg: "#3498db", textClr: "#ffffff" };
+            if (workshopName.includes("Vocal Techniques")) return { text: "🔴 RED WRISTBAND", bg: "#e74c3c", textClr: "#ffffff" };
+            if (workshopName.includes("Media Production")) return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
+            if (workshopName.includes("Music Arrangement")) return { text: "🟢 GREEN WRISTBAND", bg: "#2ecc71", textClr: "#ffffff" };
+            if (workshopName.includes("Band Dynamics")) return { text: "🟣 PURPLE WRISTBAND", bg: "#9b59b6", textClr: "#ffffff" };
+            
+            return { text: "🟠 ORANGE WRISTBAND", bg: "#e67e22", textClr: "#ffffff" };
+        }
+
+        function initScanner() {
+            if (!document.getElementById("reader")) return;
+            html5QrCode = new Html5Qrcode("reader");
+            const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+            
+            html5QrCode.start({ facingMode: "environment" }, config, onScanSuccess)
+            .then(() => {
+                statusMsg.innerText = "🎥 Camera active. Ready to scan!";
+                statusMsg.style.color = "green";
+            }).catch(err => {
+                statusMsg.style.color = "red";
+                statusMsg.innerText = "🎥 Camera access error. Check your browser URL settings.";
+            });
+        }
+
+        function onScanSuccess(decodedText, decodedResult) {
+            html5QrCode.pause();
+            const guest = attendeesDatabase.find(g => g.id === decodedText.trim());
+            
+            if (!guest) {
+                alert("❌ Invalid QR Code! " + decodedText + " not found.");
+                html5QrCode.resume();
+                return;
+            }
+
+            document.getElementById("lbl-name").innerText = guest.name;
+            document.getElementById("lbl-meta").innerText = `ID: ${guest.id} | Phone: ${guest.phone}`;
+            
+            if (guest.checkedIn) {
+                document.getElementById("checkin-warning").style.display = "block";
+            } else {
+                document.getElementById("checkin-warning").style.display = "none";
+                guest.checkedIn = true; 
+            }
+
+            const concertBadge = document.getElementById("badge-concert");
+            if (guest.concert) {
+                concertBadge.className = "badge concert-badge";
+                concertBadge.innerHTML = "<span>🎟️ Concert Access:</span> <b>🎟️ GIVE CONCERT WRISTBAND</b>";
+            } else {
+                concertBadge.className = "badge no-concert-badge";
+                concertBadge.innerHTML = "<span>❌ No Concert Access:</span> <span>Workshop Only</span>";
+            }
+
+            // DYNAMIC UPDATE: Inject the actual workshop text title directly from the database record
+            document.getElementById("lbl-workshop-name").innerText = guest.workshop;
+
+            const colorMapping = getWristbandColor(guest.workshop);
+            const box = document.getElementById("lbl-workshop-box");
+            box.innerText = colorMapping.text;
+            box.style.backgroundColor = colorMapping.bg;
+            box.style.color = colorMapping.textClr;
+
+            document.getElementById("result-card").style.display = "block";
+            document.getElementById("scanner-container").style.display = "none";
+        }
+
+        function resetScanner() {
+            document.getElementById("result-card").style.display = "none";
+            document.getElementById("scanner-container").style.display = "block";
+            statusMsg.innerText = "🎥 Camera active. Ready to scan!";
+            statusMsg.style.color = "green";
+            html5QrCode.resume();
+        }
+    </script>
+</body>
+</html>
