@@ -160,13 +160,13 @@
             if (!workshopName || workshopName.includes("None of the above")) {
                 return { text: "⚠️ NO WORKSHOP WRISTBAND", bg: "#f1f2f6", textClr: "#2f3542" };
             }
-            if (workshopName.includes("Worship Leading")) return { text: "🔵 BLUE WRISTBAND", bg: "#3498db", textClr: "#ffffff" };
-            if (workshopName.includes("Vocal Techniques")) return { text: "🔴 RED WRISTBAND", bg: "#e74c3c", textClr: "#ffffff" };
-            if (workshopName.includes("Media Production")) return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
-            if (workshopName.includes("Music Arrangement")) return { text: "🟢 GREEN WRISTBAND", bg: "#2ecc71", textClr: "#ffffff" };
-            if (workshopName.includes("Band Dynamics")) return { text: "🟣 PURPLE WRISTBAND", bg: "#9b59b6", textClr: "#ffffff" };
+            if (workshopName.includes("Vocal Techniques")) return { text: "🔵 BLUE WRISTBAND", bg: "#3498db", textClr: "#ffffff" };
+            if (workshopName.includes("Band Dynamics")) return { text: "🔴 RED WRISTBAND", bg: "#e74c3c", textClr: "#ffffff" };
+            if (workshopName.includes("歌唱技巧")) return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
+            if (workshopName.includes("Worship Leading")) return { text: "🟢 GREEN WRISTBAND", bg: "#2ecc71", textClr: "#ffffff" };
+            if (workshopName.includes("Music Production")) return { text: "🟠 ORANGE WRISTBAND", bg: "#e67e22", textClr: "#ffffff" };
             
-            return { text: "🟠 ORANGE WRISTBAND", bg: "#e67e22", textClr: "#ffffff" };
+            return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
         }
 
         function initScanner() {
