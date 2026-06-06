@@ -2,7 +2,6 @@
     {
         "id": "MGM2026_1001",
         "name": "Ng Wah Lok",
-        "email": "ngwahlok@gmail.com",
         "phone": "0222893638",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": true,
@@ -11,7 +10,6 @@
     {
         "id": "MGM2026_1002",
         "name": "Timothy Lim",
-        "email": "timlim1206@gmail.com",
         "phone": "0125096362",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
@@ -20,7 +18,6 @@
     {
         "id": "MGM2026_1003",
         "name": "Nicholas Wu",
-        "email": "kellychong0505@gmail.com",
         "phone": "0128272127",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
@@ -29,7 +26,6 @@
     {
         "id": "MGM2026_1004",
         "name": "Carmen Wong",
-        "email": "Carmenwyp@yahoo.com",
         "phone": "0163306434",
         "workshop": "歌唱技巧 (中文) - Carmen Wong",
         "concert": true,
@@ -38,7 +34,6 @@
     {
         "id": "MGM2026_1005",
         "name": "Rev. Alvin Tan",
-        "email": "alvinda95@gmail.com",
         "phone": "0123120703",
         "workshop": "None of the above",
         "concert": true,
@@ -47,7 +42,6 @@
     {
         "id": "MGM2026_1006",
         "name": "THOMPSON YUNGA",
-        "email": "thomp.yunga@gmail.com",
         "phone": "0102677810",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
@@ -55,764 +49,679 @@
     },
     {
         "id": "MGM2026_1007",
-        "name": "THOMPSON YUNGA",
-        "email": "thomp.yunga@gmail.com",
-        "phone": "0102677810",
-        "workshop": "Worship Leading - Timothy Lim and Keith Piong",
-        "concert": true,
-        "checkedIn": false
-    },
-    {
-        "id": "MGM2026_1008",
         "name": "FOH CHU MENG",
-        "email": "cmfohbdmanager@gmail.com",
         "phone": "0123153268",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1009",
+        "id": "MGM2026_1008",
         "name": "Michelle Mooi",
-        "email": "mich.mooiyh@gmail.com",
         "phone": "012-2143114",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1010",
+        "id": "MGM2026_1009",
         "name": "Kwong Ong ai",
-        "email": "dorcas_ai@yahoo.com",
         "phone": "0124514118",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1011",
+        "id": "MGM2026_1010",
         "name": "Cheris Ng",
-        "email": "cherishnghp@gmail.com",
         "phone": "0107665389",
         "workshop": "歌唱技巧 (中文) - Carmen Wong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1012",
+        "id": "MGM2026_1011",
         "name": "Esterlyne Juing",
-        "email": "esterlynej@signimo.com",
         "phone": "0133730784",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1013",
+        "id": "MGM2026_1012",
         "name": "Francis Tan",
-        "email": "francis.trend@gmail.com",
         "phone": "0122221133",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1014",
+        "id": "MGM2026_1013",
         "name": "Low Wei Chuan",
-        "email": "weichuanlow030110@gmail.com",
         "phone": "01110547533",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1015",
+        "id": "MGM2026_1014",
         "name": "David Yiap",
-        "email": "davidyiap180194@gmail.com",
         "phone": "0139820983",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1016",
+        "id": "MGM2026_1015",
         "name": "Joy Shia",
-        "email": "ajapacible@gmail.com",
         "phone": "01117551979",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1017",
+        "id": "MGM2026_1016",
         "name": "Brandon Shia",
-        "email": "bshiabk@gmail.com",
         "phone": "0172326277",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1018",
+        "id": "MGM2026_1017",
         "name": "Celine Heo",
-        "email": "celineheo1031@gmail.com",
         "phone": "0162256499",
         "workshop": "歌唱技巧 (中文) - Carmen Wong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1019",
+        "id": "MGM2026_1018",
         "name": "CK",
-        "email": "Mamasunshine99@yahoo.com",
         "phone": "016-2988816",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1020",
+        "id": "MGM2026_1019",
         "name": "Tammy Hah",
-        "email": "tammyhah.ge@gmail.com",
         "phone": "0178775979",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1021",
+        "id": "MGM2026_1020",
         "name": "Lee Pek Yin",
-        "email": "ckhengon@gmail.com",
         "phone": "0123943620",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1022",
+        "id": "MGM2026_1021",
         "name": "Teong Yin Ming",
-        "email": "Mei993@hotmail.com",
         "phone": "0172480395",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1023",
+        "id": "MGM2026_1022",
         "name": "VALERIE",
-        "email": "tamvalerie1212@gmail.com",
         "phone": "0124680911",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1024",
+        "id": "MGM2026_1023",
         "name": "Joseph Yim Sheng Yue",
-        "email": "yimjoseph0@gmail.com",
         "phone": "0166621308",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1025",
+        "id": "MGM2026_1024",
         "name": "Lee Kai Shuen",
-        "email": "kaishuenshawn@gmail.com",
         "phone": "0183889936",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1026",
+        "id": "MGM2026_1025",
         "name": "Leong Chee Pei",
-        "email": "lcp2468@hotmail.com",
         "phone": "0123863015",
         "workshop": "歌唱技巧 (中文) - Carmen Wong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1027",
+        "id": "MGM2026_1026",
         "name": "Eddy Wong",
-        "email": "eddyrswong@gmail.com",
         "phone": "0129331299",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1028",
+        "id": "MGM2026_1027",
         "name": "Lee Kai Yen",
-        "email": "Angelkaiyen@gmail.com",
         "phone": "0183869936",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1029",
+        "id": "MGM2026_1028",
         "name": "Christine Ong",
-        "email": "christineosk0913@gmail.com",
         "phone": "0123444868",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1030",
+        "id": "MGM2026_1029",
         "name": "Cham Xun Yue Isabelle",
-        "email": "chamisabelle280810@gmail.com",
         "phone": "0163610828",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1031",
+        "id": "MGM2026_1030",
         "name": "Liew Ming Yew",
-        "email": "lmyao0809@gmail.com",
         "phone": "016-2976598",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1032",
+        "id": "MGM2026_1031",
         "name": "Fion Pao",
-        "email": "fionpao@yahoo.com",
         "phone": "012-3951644",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1033",
+        "id": "MGM2026_1032",
         "name": "David Yap",
-        "email": "davidyapsy@gmail.com",
         "phone": "0162462609",
         "workshop": "歌唱技巧 (中文) - Carmen Wong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1034",
+        "id": "MGM2026_1033",
         "name": "Koh Yang Yi",
-        "email": "yangyikoh1@gmail.com",
         "phone": "014 948 2425",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1035",
+        "id": "MGM2026_1034",
         "name": "Grace Gong",
-        "email": "gly1105@126.com",
         "phone": "0176502275",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1036",
+        "id": "MGM2026_1035",
         "name": "Chan Lam Yeng",
-        "email": "lyviachan1022@gmail.com",
         "phone": "0122181353",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1037",
+        "id": "MGM2026_1036",
         "name": "John Lee Xing",
-        "email": "leexing0911@gmail.com",
         "phone": "0122765080",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1038",
+        "id": "MGM2026_1037",
         "name": "Amelia Tan",
-        "email": "amelia.starmaker@gmail.com",
         "phone": "0123050195",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1039",
+        "id": "MGM2026_1038",
         "name": "Li Teng",
-        "email": "Chen.chen557@yahio.com",
         "phone": "+60 18-360 7727",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1040",
+        "id": "MGM2026_1039",
         "name": "Ng yam ngoh",
-        "email": "2703ngoh@gmail.com",
         "phone": "016 3423493",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1041",
+        "id": "MGM2026_1040",
         "name": "Veronnee",
-        "email": "veroneteh@gmail.com",
         "phone": "0162894973",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1042",
+        "id": "MGM2026_1041",
         "name": "Kelvin Lee",
-        "email": "kleetc@yahoo.com",
         "phone": "01110011001",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1043",
+        "id": "MGM2026_1042",
         "name": "Eric Deng",
-        "email": "denge414@outlook.com",
         "phone": "0177653616",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1044",
+        "id": "MGM2026_1043",
         "name": "Lim Jen Nee",
-        "email": "Jenneelim04@yahoo.com",
         "phone": "0126065265",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1045",
+        "id": "MGM2026_1044",
         "name": "Michelle Phong",
-        "email": "jenneelim04@yahoo.com",
         "phone": "+60 12-689 8181",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1046",
+        "id": "MGM2026_1045",
         "name": "Victor Chua",
-        "email": "victorosleec@gmail.com",
         "phone": "0122495618",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1047",
+        "id": "MGM2026_1046",
         "name": "David Loo Yee Ern",
-        "email": "yeeern81.dl@gmail.com",
         "phone": "0126432835",
         "workshop": "歌唱技巧 (中文) - Carmen Wong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1048",
+        "id": "MGM2026_1047",
         "name": "I-Wei Foo",
-        "email": "darkchocolatedrizzles@gmail.com",
         "phone": "0122018411",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1049",
+        "id": "MGM2026_1048",
         "name": "Christine Chew",
-        "email": "chriscsy@proton.me",
         "phone": "+60123034168",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1050",
+        "id": "MGM2026_1049",
         "name": "Marcus Lee",
-        "email": "marcusleeltm95@gmail.com",
         "phone": "+60126686721",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1051",
+        "id": "MGM2026_1050",
         "name": "Yong Syn",
-        "email": "yongsyn@gmail.com",
         "phone": "0128805248",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1052",
+        "id": "MGM2026_1051",
         "name": "EMMANUEL A/L RAJA RAMASAMY",
-        "email": "emanchrist17@gmail.com",
         "phone": "0177870642",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1053",
+        "id": "MGM2026_1052",
         "name": "Sylvia Joseph",
-        "email": "Sylvia47600@gmail.com",
         "phone": "0192261015",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1054",
+        "id": "MGM2026_1053",
         "name": "Michael Joseph",
-        "email": "mikej@pop.jaring.asia",
         "phone": "0192752301",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1055",
+        "id": "MGM2026_1054",
         "name": "Susan Teoh",
-        "email": "teohshuchern@gmail.com",
         "phone": "0182894831",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1056",
+        "id": "MGM2026_1055",
         "name": "Zoe Liyau",
-        "email": "ziyi.liyau@bethany.org.my",
         "phone": "60129420885",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1057",
+        "id": "MGM2026_1056",
         "name": "KS Yap",
-        "email": "ksyap0909@gmail.com",
         "phone": "60102286785",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1058",
+        "id": "MGM2026_1057",
         "name": "Valerie Lau",
-        "email": "g3ewhiz@gmail.com",
         "phone": "60122511471",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1059",
+        "id": "MGM2026_1058",
         "name": "Jamie Yap",
-        "email": "jamieyap3@yahoo.com",
         "phone": "01111568208",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1060",
+        "id": "MGM2026_1059",
         "name": "Sophia Liow",
-        "email": "J23040563@student.newinti.edu.my",
         "phone": "0162176550",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1061",
+        "id": "MGM2026_1060",
         "name": "Keith Piong",
-        "email": "keith.piong@gmail.com",
-        "phone": "0122104729",
-        "workshop": "None of the above",
-        "concert": true,
-        "checkedIn": false
-    },
-    {
-        "id": "MGM2026_1062",
-        "name": "Keith Piong",
-        "email": "keith.piong@gmail.com",
         "phone": "0122104729",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1063",
+        "id": "MGM2026_1061",
         "name": "KH Khoo",
-        "email": "khkhoo@gmail.com",
         "phone": "012-3077316",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1064",
+        "id": "MGM2026_1062",
         "name": "Windy Wong",
-        "email": "windywong56@gmail.com",
         "phone": "60125438797",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1065",
+        "id": "MGM2026_1063",
         "name": "Jonathan Ting",
-        "email": "jonathanting2001@gmail.com",
         "phone": "601165019139",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1066",
+        "id": "MGM2026_1064",
         "name": "Alfred Au",
-        "email": "alfred.au.fardel@gmail.com",
         "phone": "0104248806",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1067",
+        "id": "MGM2026_1065",
         "name": "Henry Nayagam",
-        "email": "henrynayagam22@gmail.com",
         "phone": "0123412271",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1068",
+        "id": "MGM2026_1066",
         "name": "Esther Chu",
-        "email": "Estheryunsing@gmail.com",
         "phone": "0122182090",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1069",
+        "id": "MGM2026_1067",
         "name": "Henry",
-        "email": "henryhee1080@gmail.com",
         "phone": "601114171995",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1070",
+        "id": "MGM2026_1068",
         "name": "Zoe Lim Shu Yen",
-        "email": "zoelim.eden@gmail.com",
         "phone": "012-472-3316",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1071",
+        "id": "MGM2026_1069",
         "name": "Kelly Chong",
-        "email": "kellychong0505@gmail.com",
         "phone": "012-8272127",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1072",
+        "id": "MGM2026_1070",
         "name": "Zachariah Lim Ve Han",
-        "email": "zachlimvh@gmail.com",
         "phone": "012-472-3316",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1073",
+        "id": "MGM2026_1071",
         "name": "Lai Kevin",
-        "email": "Liftg.Kiks@hotmail.com",
         "phone": "0182826764",
         "workshop": "歌唱技巧 (中文) - Carmen Wong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1074",
-        "name": "724 Band - 7 pax; Singers - 3 pax",
-        "email": "fionpao@yahoo.com",
+        "id": "MGM2026_1072",
+        "name": "⚠️ [CHECK GROUP] 724 Band - 7 pax; Singers - 3 pax",
         "phone": "012-3951644",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1075",
+        "id": "MGM2026_1073",
         "name": "Christine Lim",
-        "email": "chrislimcc@gmail.com",
         "phone": "0122356200",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1076",
+        "id": "MGM2026_1074",
         "name": "GABRIEL TAN",
-        "email": "gabbytan9696@gmail.com",
         "phone": "0192396868",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1077",
+        "id": "MGM2026_1075",
         "name": "Ramesh Kumar",
-        "email": "ramesh.rcl62@gmail.com",
         "phone": "60192798934",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1078",
+        "id": "MGM2026_1076",
         "name": "Natalie Choy",
-        "email": "nataliecyy2000@gmail.com",
         "phone": "0122168638",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1079",
+        "id": "MGM2026_1077",
         "name": "Yvonne Chan",
-        "email": "liyuan.chan@gmail.com",
         "phone": "0129031223",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1080",
+        "id": "MGM2026_1078",
         "name": "Wong Sheue Ling",
-        "email": "sheuewong@gmail.com",
         "phone": "0122838638",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1081",
+        "id": "MGM2026_1079",
         "name": "Noreen Chong",
-        "email": "Noreen.chong@gmail.com",
         "phone": "012-3290330",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1082",
+        "id": "MGM2026_1080",
         "name": "Sean Cheong",
-        "email": "vent_zx@hotmail.com",
         "phone": "0122155140",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1083",
+        "id": "MGM2026_1081",
         "name": "Jessica Low May Teng",
-        "email": "jessicamtlow@yahoo.com",
         "phone": "0192103600",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1084",
+        "id": "MGM2026_1082",
         "name": "Jason Tong",
-        "email": "alfee29@gmail.com",
         "phone": "0122232711",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1085",
+        "id": "MGM2026_1083",
         "name": "Astrid Yeow",
-        "email": "Yeowastrid@gmail.com",
         "phone": "0129731161",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1086",
+        "id": "MGM2026_1084",
         "name": "Steve Ong",
-        "email": "steveongchungwai@gmail.com",
         "phone": "0183667822",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1087",
+        "id": "MGM2026_1085",
         "name": "Janice loo",
-        "email": "janice_loo@yahoo.com",
         "phone": "0122072954",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1088",
+        "id": "MGM2026_1086",
         "name": "michael cheong",
-        "email": "mikeche@email.com",
         "phone": "0192196733",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1089",
+        "id": "MGM2026_1087",
         "name": "Grace",
-        "email": "grace.khoo11@gmail.com",
         "phone": "0172016818",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1090",
+        "id": "MGM2026_1088",
         "name": "Sherina Vijayan",
-        "email": "rina_328@yahoo.com",
         "phone": "0127071830",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1091",
+        "id": "MGM2026_1089",
         "name": "Yong Wan Chin",
-        "email": "richlizng@gmail.com",
+        "phone": "0126236273",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1090",
+        "name": "Elijah Ng",
+        "phone": "0126236273",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1091",
+        "name": "Shawn Yong",
         "phone": "0126236273",
         "workshop": "None of the above",
         "concert": true,
@@ -820,206 +729,183 @@
     },
     {
         "id": "MGM2026_1092",
-        "name": "Elijah Ng",
-        "email": "richlizng@gmail.com",
-        "phone": "0126236273",
-        "workshop": "None of the above",
-        "concert": true,
-        "checkedIn": false
-    },
-    {
-        "id": "MGM2026_1093",
-        "name": "Shawn Yong",
-        "email": "richlizng@gmail.com",
-        "phone": "0126236273",
-        "workshop": "None of the above",
-        "concert": true,
-        "checkedIn": false
-    },
-    {
-        "id": "MGM2026_1094",
         "name": "Datin Linda Cheang",
-        "email": "lindacheang7@yahoo.com",
         "phone": "0162251188",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1095",
+        "id": "MGM2026_1093",
         "name": "Brandon Chew",
-        "email": "bchew8082@gmail.com",
         "phone": "0182764055",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1096",
+        "id": "MGM2026_1094",
         "name": "Joyce Tan",
-        "email": "joysesk@hotmail.com",
         "phone": "0172888177",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1097",
+        "id": "MGM2026_1095",
         "name": "Gillian Lee",
-        "email": "gillianlnl@yahoo.com",
         "phone": "012-3272562",
         "workshop": "歌唱技巧 (中文) - Carmen Wong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1098",
+        "id": "MGM2026_1096",
         "name": "Jane Ng",
-        "email": "janesweetjieng@gmail.com",
         "phone": "01126246288",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1099",
+        "id": "MGM2026_1097",
         "name": "Lee Yen",
-        "email": "joannaleeyen@gmail.com",
         "phone": "019-2742456",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1100",
+        "id": "MGM2026_1098",
         "name": "Matthew Chia",
-        "email": "matthewchia37@gmail.com",
         "phone": "0123873918",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1101",
+        "id": "MGM2026_1099",
         "name": "Yam May Anne",
-        "email": "mayn.yam@gmail.com",
         "phone": "0126123717",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1102",
+        "id": "MGM2026_1100",
         "name": "Li-Anne",
-        "email": "potterbelle@hotmail.com",
         "phone": "0102888903",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1103",
+        "id": "MGM2026_1101",
         "name": "Lam Hon Yeong",
-        "email": "lamyeong1@gmail.com",
         "phone": "0169700868",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1104",
+        "id": "MGM2026_1102",
         "name": "Evelyn Khue",
-        "email": "margii@hotmail.com",
         "phone": "0122140886",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1105",
+        "id": "MGM2026_1103",
         "name": "Joshua Kung",
-        "email": "joshua.kung.wj@gmail.com",
         "phone": "0163703779",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1106",
+        "id": "MGM2026_1104",
         "name": "Wendy Thian",
-        "email": "wendytfl@gmail.com",
         "phone": "012-686 7174",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1107",
+        "id": "MGM2026_1105",
         "name": "SU KEAT",
-        "email": "keat0228@gmail.com",
         "phone": "0126490773",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1108",
+        "id": "MGM2026_1106",
         "name": "Jelita Ling",
-        "email": "jelitaling@yahoo.com",
         "phone": "0122255389",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1109",
+        "id": "MGM2026_1107",
         "name": "James Ong",
-        "email": "jinheeong@gmail.com",
         "phone": "0123075654",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1110",
+        "id": "MGM2026_1108",
         "name": "Richard Ng",
-        "email": "richlizng@gmail.com",
         "phone": "0129095534",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1111",
+        "id": "MGM2026_1109",
         "name": "Caleb Woo Choong Yao",
-        "email": "calebwoo98@gmail.com",
         "phone": "01139829330",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1112",
+        "id": "MGM2026_1110",
         "name": "Melinda",
-        "email": "melindapainol11@gmail.com",
         "phone": "01125288604",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1113",
+        "id": "MGM2026_1111",
         "name": "Immanuel Yeow",
-        "email": "danielyeow2@gmail.com",
         "phone": "0172195159",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1114",
+        "id": "MGM2026_1112",
         "name": "Lorraine Yoong",
-        "email": "Motherscreation@gmail.com",
+        "phone": "0162723548",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1113",
+        "name": "Stephen chew",
+        "phone": "0122297833",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1114",
+        "name": "Christen chew",
         "phone": "0162723548",
         "workshop": "None of the above",
         "concert": true,
@@ -1027,638 +913,567 @@
     },
     {
         "id": "MGM2026_1115",
-        "name": "Stephen chew",
-        "email": "Stephenchew10@gmail.com",
-        "phone": "0122297833",
-        "workshop": "None of the above",
-        "concert": true,
-        "checkedIn": false
-    },
-    {
-        "id": "MGM2026_1116",
-        "name": "Christen chew",
-        "email": "christenchew77@gmail.com",
-        "phone": "0162723548",
-        "workshop": "None of the above",
-        "concert": true,
-        "checkedIn": false
-    },
-    {
-        "id": "MGM2026_1117",
-        "name": "Brett Daniels",
-        "email": "brettdaniels051@gmail.com",
-        "phone": "0148540015",
-        "workshop": "None of the above",
-        "concert": true,
-        "checkedIn": false
-    },
-    {
-        "id": "MGM2026_1118",
-        "name": "Elton Brandon",
-        "email": "abophilip94@gmail.com",
-        "phone": "0176381097",
-        "workshop": "None of the above",
-        "concert": true,
-        "checkedIn": false
-    },
-    {
-        "id": "MGM2026_1119",
         "name": "Randy Saupin",
-        "email": "randyren45@gmail.com",
         "phone": "0105150851",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1120",
+        "id": "MGM2026_1116",
         "name": "Ollsen Joachim Mathew",
-        "email": "owchen@yahoo.com",
         "phone": "0135305381",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1121",
-        "name": "Moses Dass",
-        "email": "dassmoses25@gmail.com",
-        "phone": "0109085961",
-        "workshop": "None of the above",
-        "concert": true,
-        "checkedIn": false
-    },
-    {
-        "id": "MGM2026_1122",
+        "id": "MGM2026_1117",
         "name": "CHONG SEE MIN",
-        "email": "chongseemin@yahoo.com",
         "phone": "0126574073",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1123",
+        "id": "MGM2026_1118",
         "name": "Jarrett Soon",
-        "email": "jsoon96@gmail.com",
         "phone": "0102540285",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1124",
+        "id": "MGM2026_1119",
         "name": "Marc Chow",
-        "email": "marc.zy@gmail.com",
         "phone": "0149662270",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1125",
-        "name": "Brandon Chew",
-        "email": "bchew8082@gmail.com",
-        "phone": "0182764055",
-        "workshop": "None of the above",
-        "concert": true,
-        "checkedIn": false
-    },
-    {
-        "id": "MGM2026_1126",
+        "id": "MGM2026_1120",
         "name": "Andy Yeoh",
-        "email": "andy@generations.my",
         "phone": "=+60123392387",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1127",
+        "id": "MGM2026_1121",
         "name": "Wong Chin Meng",
-        "email": "chinmeng.wong@yahoo.com",
         "phone": "0162090075",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1128",
+        "id": "MGM2026_1122",
         "name": "Jonathan Thiagaraj",
-        "email": "jonathanthiagaraj@gmail.com",
         "phone": "01111560707",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1129",
+        "id": "MGM2026_1123",
         "name": "Nelson Ong",
-        "email": "nelsonongchinhui@gmail.com",
         "phone": "60178809553",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1130",
+        "id": "MGM2026_1124",
         "name": "Dorcas",
-        "email": "dorcas_ai@yahoo.com",
         "phone": "0124514118",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1131",
+        "id": "MGM2026_1125",
         "name": "Michelle Law",
-        "email": "mich.hongsia@gmail.com",
         "phone": "0122330093",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1132",
+        "id": "MGM2026_1126",
         "name": "Pat Wong",
-        "email": "patomfamily@gmail.com",
         "phone": "0167465358 (whatsapp +852 97867547)",
         "workshop": "歌唱技巧 (中文) - Carmen Wong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1133",
+        "id": "MGM2026_1127",
         "name": "Stephanie Lau",
-        "email": "chupmei@yahoo.com",
         "phone": "0123191450",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1134",
+        "id": "MGM2026_1128",
         "name": "Samantha Leong",
-        "email": "sammmyyyy007@gmail.com",
         "phone": "0127717002",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1135",
+        "id": "MGM2026_1129",
         "name": "James Leong",
-        "email": "James_leong007@yahoo.com",
         "phone": "0122827002",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1136",
+        "id": "MGM2026_1130",
         "name": "Jazzlyn Leong",
-        "email": "tbread223@gmail.com",
         "phone": "0122790143",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1137",
+        "id": "MGM2026_1131",
         "name": "Alyson Seah",
-        "email": "alysonseah@gmail.com",
         "phone": "017-3248379",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1138",
+        "id": "MGM2026_1132",
         "name": "Brett Daniels",
-        "email": "brettdaniels051@gmail.com",
         "phone": "0148540015",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1139",
+        "id": "MGM2026_1133",
         "name": "Elton Brandon Philip",
-        "email": "abophilip94@gmail.com",
         "phone": "0176381097",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1140",
+        "id": "MGM2026_1134",
         "name": "Kevin Raj",
-        "email": "kevinraj7597@gmail.com",
-        "phone": "166347821",
+        "phone": "0166347821",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1141",
+        "id": "MGM2026_1135",
         "name": "Benjamin LA",
-        "email": "b3njaminla@gmail.com",
         "phone": "0183929162",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1142",
+        "id": "MGM2026_1136",
         "name": "Rebecca",
-        "email": "yadiezhuang@gmail.com",
         "phone": "0176788749",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1143",
+        "id": "MGM2026_1137",
         "name": "Daneil",
-        "email": "yadiezhuang@gmail.com",
         "phone": "0176788749",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1144",
+        "id": "MGM2026_1138",
         "name": "Timothy Soo",
-        "email": "apatimmy@gmail.com",
         "phone": "01127609515",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1145",
+        "id": "MGM2026_1139",
         "name": "Neriah Lau",
-        "email": "neriahlau603@gmail.com",
         "phone": "01157506198",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1146",
+        "id": "MGM2026_1140",
         "name": "Amanda Lim",
-        "email": "amandalim693@gmail.com",
         "phone": "0125315077",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1147",
+        "id": "MGM2026_1141",
         "name": "Ng Shern Man",
-        "email": "shernman@gmail.com",
         "phone": "0124121948",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1148",
+        "id": "MGM2026_1142",
         "name": "Joseph Hu",
-        "email": "zax1642006@gmail.com",
         "phone": "0185898608",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1149",
+        "id": "MGM2026_1143",
         "name": "Theodore",
-        "email": "theodorehuu2@gmail.com",
         "phone": "0186322543",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1150",
+        "id": "MGM2026_1144",
         "name": "Sharon Lim",
-        "email": "sharonlss@hotmail.com",
         "phone": "0126395633",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1151",
+        "id": "MGM2026_1145",
         "name": "Angeline Lim",
-        "email": "angiehmlim@gmail.com",
         "phone": "0122919400",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1152",
+        "id": "MGM2026_1146",
         "name": "Choong Lai Theng",
-        "email": "laitheng83@gmail.com",
         "phone": "0125303949",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1153",
+        "id": "MGM2026_1147",
         "name": "Moses Dass",
-        "email": "dassmoses25@gmail.com",
         "phone": "010985961",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1154",
+        "id": "MGM2026_1148",
         "name": "Brenda Niam",
-        "email": "exodus873@hotmail.com",
         "phone": "0123998306",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1155",
+        "id": "MGM2026_1149",
         "name": "郑福安 (Jay Chang)",
-        "email": "jyjayan0253@gmail.com",
         "phone": "0149082599",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1156",
+        "id": "MGM2026_1150",
         "name": "Alice Lai",
-        "email": "alicelai77@gmail.com",
         "phone": "019-3582846",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1157",
+        "id": "MGM2026_1151",
         "name": "ASHER WONG CHEN MIN",
-        "email": "asherwcm@gmail.com",
         "phone": "601116169716",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1158",
+        "id": "MGM2026_1152",
         "name": "Joyce Chee",
-        "email": "jynchee@gmail.com",
         "phone": "0176355033",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1159",
+        "id": "MGM2026_1153",
         "name": "Max",
-        "email": "max.ongyc@gmail.com",
         "phone": "0128277428",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1160",
+        "id": "MGM2026_1154",
         "name": "Chen Su-Ai",
-        "email": "suai.chen@gmail.com",
         "phone": "0122671382",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1161",
+        "id": "MGM2026_1155",
         "name": "Ng Sow Han",
-        "email": "shng01@yahoo.com",
         "phone": "0126512650",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1162",
+        "id": "MGM2026_1156",
         "name": "Katherine Benjamin",
-        "email": "katherinebenjamin4322@gmail.com",
         "phone": "012-7210046",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1163",
+        "id": "MGM2026_1157",
         "name": "Desmond Pui",
-        "email": "despui@gmail.com",
         "phone": "0168692968",
         "workshop": "Media Production in Church settings - Leon Lim",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1164",
+        "id": "MGM2026_1158",
         "name": "Ira Tan",
-        "email": "tanirahann@gmail.com",
         "phone": "0102752350",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1165",
+        "id": "MGM2026_1159",
         "name": "Lim Wooi Chen",
-        "email": "wooichenlim@gmail.com",
         "phone": "0123880515",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1166",
+        "id": "MGM2026_1160",
         "name": "Chan Shueh Ying Abigail",
-        "email": "abiesychan@gmail.com",
         "phone": "011-1050-1010",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1167",
+        "id": "MGM2026_1161",
         "name": "Joel Lim",
-        "email": "joel.limjinyang@gmail.com",
         "phone": "01168583494",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1168",
+        "id": "MGM2026_1162",
         "name": "Tai Lee Nah",
-        "email": "leenahtai@gmail.com",
         "phone": "0123202940",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1169",
+        "id": "MGM2026_1163",
         "name": "Valerie Voo hui yee",
-        "email": "Sllw24@yahoo.com",
         "phone": "0123277362",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1170",
+        "id": "MGM2026_1164",
         "name": "Thoo Chiew Hee",
-        "email": "chiew_hee@hotmail.com",
         "phone": "0107600180",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1171",
+        "id": "MGM2026_1165",
         "name": "Kenaniah Lam Khan Yue",
-        "email": "kenaniahlky@gmail.com",
         "phone": "012-675 8891",
         "workshop": "Music Arrangement and Production - 724 Band",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1172",
+        "id": "MGM2026_1166",
         "name": "Peter Chin",
-        "email": "commpeter@gmail.com",
         "phone": "019 3801332",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1173",
+        "id": "MGM2026_1167",
         "name": "Elaine Chan",
-        "email": "elainechan106@gmail.com",
         "phone": "0122883644",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1174",
+        "id": "MGM2026_1168",
         "name": "Asaph Seah Rui Sheng",
-        "email": "asaphseah@gmail.com",
         "phone": "01123282393",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1175",
+        "id": "MGM2026_1169",
         "name": "Salifiah Taradas",
-        "email": "alipwwjd@gmail.com",
         "phone": "0132209768",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1176",
+        "id": "MGM2026_1170",
         "name": "Siew Hui",
-        "email": "siewhui.fgt@gmail.com",
         "phone": "012-5674023",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1177",
-        "name": "John Robwin Winson Augustus",
-        "email": "johnrobwin777@gmail.com",
-        "phone": "01139103818",
-        "workshop": "Worship Leading - Timothy Lim and Keith Piong",
-        "concert": true,
-        "checkedIn": false
-    },
-    {
-        "id": "MGM2026_1178",
+        "id": "MGM2026_1171",
         "name": "Sarthak Thapa",
-        "email": "03sarthak03@gmail.com",
         "phone": "01123090109",
         "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1179",
+        "id": "MGM2026_1172",
         "name": "Jensis Thean",
-        "email": "jensis_try@yahoo.com",
         "phone": "0125061082",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1180",
+        "id": "MGM2026_1173",
         "name": "WONG JEAN YEE",
-        "email": "jean0224@gmail.com",
-        "phone": "60162677133",
+        "phone": "0162677133",
         "workshop": "歌唱技巧 (中文) - Carmen Wong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1181",
+        "id": "MGM2026_1174",
         "name": "Pamela wang",
-        "email": "pamslwang@yahoo.co.uk",
         "phone": "0143662039",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1182",
+        "id": "MGM2026_1175",
         "name": "Chin Tze Lin",
-        "email": "chintzelin@gmail.com",
         "phone": "0122901355",
         "workshop": "Vocal Techniques (English) - Patrick Leong",
         "concert": false,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1183",
+        "id": "MGM2026_1176",
         "name": "Grace Wong",
-        "email": "graceey0327@yahoo.com",
         "phone": "0126333559",
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1184",
-        "name": "Grace Wong",
-        "email": "graceey0327@yahoo.com",
+        "id": "MGM2026_1177",
+        "name": "Swee Ying",
         "phone": "0126333559",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
-        "id": "MGM2026_1185",
+        "id": "MGM2026_1178",
         "name": "Ham",
-        "email": "ham1224@hotmail.com",
+        "phone": "0163480760",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1179",
+        "name": "Vincent",
+        "phone": "0163480760",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1180",
+        "name": "Arias",
+        "phone": "0163480760",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1181",
+        "name": "Raisah",
+        "phone": "0163480760",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1182",
+        "name": "Zamrinas",
+        "phone": "0163480760",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1183",
+        "name": "Aris",
+        "phone": "0163480760",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1184",
+        "name": "Sariah",
+        "phone": "0163480760",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1185",
+        "name": "Tetap",
         "phone": "0163480760",
         "workshop": "None of the above",
         "concert": true,
@@ -1666,8 +1481,7 @@
     },
     {
         "id": "MGM2026_1186",
-        "name": "Vincent",
-        "email": "ham1224@hotmail.com",
+        "name": "Fariezan",
         "phone": "0163480760",
         "workshop": "None of the above",
         "concert": true,
@@ -1675,63 +1489,280 @@
     },
     {
         "id": "MGM2026_1187",
-        "name": "Arias",
-        "email": "ham1224@hotmail.com",
-        "phone": "0163480760",
+        "name": "Annelin Yap",
+        "phone": "0126406298",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
         "id": "MGM2026_1188",
-        "name": "Raisah",
-        "email": "ham1224@hotmail.com",
-        "phone": "0163480760",
-        "workshop": "None of the above",
+        "name": "Joel Lai Jia En",
+        "phone": "01126120381",
+        "workshop": "Media Production in Church settings - Leon Lim",
         "concert": true,
         "checkedIn": false
     },
     {
         "id": "MGM2026_1189",
-        "name": "Zamrinas",
-        "email": "ham1224@hotmail.com",
-        "phone": "0163480760",
-        "workshop": "None of the above",
+        "name": "Esther Chong",
+        "phone": "01159589610",
+        "workshop": "Band Dynamics - Zeo Music",
         "concert": true,
         "checkedIn": false
     },
     {
         "id": "MGM2026_1190",
-        "name": "Aris",
-        "email": "ham1224@hotmail.com",
-        "phone": "0163480760",
-        "workshop": "None of the above",
+        "name": "LIM Chang Moh (William)",
+        "phone": "0122115921",
+        "workshop": "Music Arrangement and Production - 724 Band",
         "concert": true,
         "checkedIn": false
     },
     {
         "id": "MGM2026_1191",
-        "name": "Sariah",
-        "email": "ham1224@hotmail.com",
-        "phone": "0163480760",
+        "name": "Roland Shau",
+        "phone": "0123900840",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
         "id": "MGM2026_1192",
-        "name": "Tetap",
-        "email": "ham1224@hotmail.com",
-        "phone": "0163480760",
+        "name": "Foong Kah Mun",
+        "phone": "0122386627",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false
     },
     {
         "id": "MGM2026_1193",
-        "name": "Fariezan",
-        "email": "ham1224@hotmail.com",
-        "phone": "0163480760",
+        "name": "Joshua Shau",
+        "phone": "0123900840",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1194",
+        "name": "Eugene Goh",
+        "phone": "017 6054 800",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1195",
+        "name": "Joanna Shau",
+        "phone": "0123900840",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1196",
+        "name": "Nelly Yawasang",
+        "phone": "0145562256",
+        "workshop": "Vocal Techniques (English) - Patrick Leong",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1197",
+        "name": "Loh Pei Yan",
+        "phone": "0164351064",
+        "workshop": "Worship Leading - Timothy Lim and Keith Piong",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1198",
+        "name": "Jonathan Daniel Roberts",
+        "phone": "0176628546",
+        "workshop": "Media Production in Church settings - Leon Lim",
+        "concert": false,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1199",
+        "name": "Joshua Javen",
+        "phone": "0182026867",
+        "workshop": "Band Dynamics - Zeo Music",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1200",
+        "name": "Eva Tan",
+        "phone": "0128138893",
+        "workshop": "Music Arrangement and Production - 724 Band",
+        "concert": false,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1201",
+        "name": "Wilson Lim",
+        "phone": "0122862990",
+        "workshop": "Worship Leading - Timothy Lim and Keith Piong",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1202",
+        "name": "Nicholas Cheong",
+        "phone": "0123113845",
+        "workshop": "Band Dynamics - Zeo Music",
+        "concert": false,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1203",
+        "name": "Daphne Ang",
+        "phone": "0139416740",
+        "workshop": "Worship Leading - Timothy Lim and Keith Piong",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1204",
+        "name": "Jacqueline Toon",
+        "phone": "0166660801",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1205",
+        "name": "June wong",
+        "phone": "0185724918",
+        "workshop": "歌唱技巧 (中文) - Carmen Wong",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1206",
+        "name": "Ashley",
+        "phone": "0148506195",
+        "workshop": "Worship Leading - Timothy Lim and Keith Piong",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1207",
+        "name": "Catherine Hee",
+        "phone": "0193449933",
+        "workshop": "歌唱技巧 (中文) - Carmen Wong",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1208",
+        "name": "Setlan@hotmail.com",
+        "phone": "016 3920135",
+        "workshop": "Worship Leading - Timothy Lim and Keith Piong",
+        "concert": false,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1209",
+        "name": "Jane",
+        "phone": "124162691",
+        "workshop": "Music Arrangement and Production - 724 Band",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1210",
+        "name": "Geoffrey Oh",
+        "phone": "016 6656 832",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1211",
+        "name": "Bessie Mah Chee Ching",
+        "phone": "016-2678989",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1212",
+        "name": "Luke Kiang",
+        "phone": "0123113781",
+        "workshop": "Media Production in Church settings - Leon Lim",
+        "concert": false,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1213",
+        "name": "John Robwin",
+        "phone": "01139103818",
+        "workshop": "Band Dynamics - Zeo Music",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1214",
+        "name": "Samson Sip",
+        "phone": "0165387782",
+        "workshop": "Band Dynamics - Zeo Music",
+        "concert": false,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1215",
+        "name": "Frank Tuan",
+        "phone": "0122977887",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1216",
+        "name": "Nelson Leong",
+        "phone": "0126010200",
+        "workshop": "Music Arrangement and Production - 724 Band",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1217",
+        "name": "Alex Ng",
+        "phone": "011-15113079",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1218",
+        "name": "LIM KOK HONG",
+        "phone": "016-4110802",
+        "workshop": "Music Arrangement and Production - 724 Band",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1219",
+        "name": "Loh Wee Khee",
+        "phone": "0174380561",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1220",
+        "name": "Vincent Tang",
+        "phone": "011-26715374",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1221",
+        "name": "Sarah Toral",
+        "phone": "011-33441481",
         "workshop": "None of the above",
         "concert": true,
         "checkedIn": false

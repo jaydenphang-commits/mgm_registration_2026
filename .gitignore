@@ -2,6 +2,8 @@
 *.xlsx
 *.csv
 generated_qrs/
+google_credentials.json
+attendees_db.json
 
 # Ignore any local system files
 .DS_Store
