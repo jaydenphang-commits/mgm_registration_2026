@@ -57,7 +57,7 @@
             justify-content: space-between;
             color: white;
         }
-        .concert-badge { background-color: #2ecc71; }
+        .concert-badge { background-color: #f1c40f; }
         .no-concert-badge { background-color: #95a5a6; }
         
         .workshop-title { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #7f8c8d; font-weight: bold; margin-top: 15px;}
@@ -113,10 +113,15 @@
     <p class="subtitle">Volunteer Scanning Console</p>
 
     <div id="scanner-container">
-        <div style="margin-bottom: 15px; padding: 10px; background: #eef2f7; border-radius: 8px; display: flex; gap: 8px;">
-            <input type="text" id="txt-search" list="attendees-list" placeholder="Type Name or Phone..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px;">
-            <datalist id="attendees-list"></datalist>
-            <button onclick="manualSearchGuest()" style="padding: 10px 15px; background: #2c3e50; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px;">SEARCH</button>
+        <div style="margin-bottom: 15px; position: relative;">
+            <div style="padding: 10px; background: #eef2f7; border-radius: 8px; display: flex; gap: 8px;">
+                <input type="text" id="txt-search" oninput="handleSearchTyping()" placeholder="Type Name or Phone Number..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px;" autocomplete="off">
+                <button onclick="manualSearchGuest()" style="padding: 10px 15px; background: #2c3e50; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px;">SEARCH</button>
+            </div>
+            
+            <!-- Custom On-Screen Autocomplete Dropdown Box -->
+            <div id="custom-suggestions" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #ccc; border-radius: 6px; max-height: 200px; overflow-y: auto; z-index: 9999; box-shadow: 0px 4px 12px rgba(0,0,0,0.15); margin-top: 4px;">
+            </div>
         </div>
         <div id="status-msg">Connecting to database...</div>
         <div id="reader"></div>
@@ -187,17 +192,101 @@
             datalist.appendChild(phoneOption);
         });
     }
+        // NEW: Active typing controller that renders results cleanly on the screen
+    function handleSearchTyping() {
+        const inputField = document.getElementById("txt-search");
+        const query = inputField.value.trim().toLowerCase();
+        const suggestionsBox = document.getElementById("custom-suggestions");
+        
+        // Clear out dropdown if the entry string is empty or too short
+        if (!query || query.length < 1) {
+            suggestionsBox.innerHTML = "";
+            suggestionsBox.style.display = "none";
+            return;
+        }
+
+        // Filter rules: Prioritize strings starting with the letters typed (Prefix check)
+        // If nothing matches the beginning, look for a general inclusion match
+        let matches = attendeesDatabase.filter(g => {
+            const normPhone = g.phone.replace(/[- ]/g, "");
+            const cleanQuery = query.replace(/[- ]/g, "");
+            return g.name.toLowerCase().startsWith(query) || normPhone.startsWith(cleanQuery);
+        });
+
+        if (matches.length === 0) {
+            matches = attendeesDatabase.filter(g => {
+                const normPhone = g.phone.replace(/[- ]/g, "");
+                const cleanQuery = query.replace(/[- ]/g, "");
+                return g.name.toLowerCase().includes(query) || normPhone.includes(cleanQuery);
+            });
+        }
+
+        // Render results to the customized interface panel on-screen
+        suggestionsBox.innerHTML = "";
+        
+        if (matches.length > 0) {
+            // Take up to top 15 matches to maintain performance limits
+            matches.slice(0, 15).forEach(guest => {
+                const rowItem = document.createElement("div");
+                rowItem.style.padding = "12px 15px";
+                rowItem.style.cursor = "pointer";
+                rowItem.style.borderBottom = "1px solid #f1f2f6";
+                rowItem.style.fontSize = "14px";
+                rowItem.style.display = "flex";
+                rowItem.style.justifyContent = "space-between";
+                rowItem.style.alignItems = "center";
+                
+                // Text presentation elements
+                rowItem.innerHTML = `
+                    <div>
+                        <strong style="color: #2c3e50;">${guest.name}</strong>
+                        <div style="font-size: 12px; color: #7f8c8d; margin-top: 2px;">📞 ${guest.phone}</div>
+                    </div>
+                    <span style="font-size: 11px; padding: 3px 6px; background: #eef2f7; border-radius: 4px; color: #7f8c8d;">
+                        ${guest.checkedIn ? "Checked In ✅" : "Ready"}
+                    </span>
+                `;
+                
+                // Set up click action listener to pass selection data explicitly
+                rowItem.onclick = function() {
+                    inputField.value = guest.name;
+                    suggestionsBox.innerHTML = "";
+                    suggestionsBox.style.display = "none";
+                    
+                    if (html5QrCode && html5QrCode.isScanning) {
+                        html5QrCode.pause();
+                    }
+                    processGuestCheckIn(guest);
+                };
+                
+                suggestionsBox.appendChild(rowItem);
+            });
+            suggestionsBox.style.display = "block";
+        } else {
+            suggestionsBox.style.display = "none";
+        }
+    }
+
+    // Close dropdown automatically if volunteer taps anywhere outside the box container
+    document.addEventListener("click", function(e) {
+        const box = document.getElementById("custom-suggestions");
+        const searchWrap = document.getElementById("txt-search");
+        if (e.target !== box && e.target !== searchWrap) {
+            box.style.display = "none";
+        }
+    });
 
     function getWristbandColor(workshopName) {
         if (!workshopName || workshopName.includes("None of the above")) {
-            return { text: "⚠️ NO WORKSHOP WRISTBAND", bg: "#f1f2f6", textClr: "#2f3542" };
+            return { text: "⚠️ NO WORKSHOP WRISTBAND", bg: "#f1c40f", textClr: "#2f3542" };
         }
         if (workshopName.includes("Vocal Techniques")) return { text: "🔵 BLUE WRISTBAND", bg: "#3498db", textClr: "#ffffff" };
         if (workshopName.includes("Band Dynamics")) return { text: "🔴 RED WRISTBAND", bg: "#e74c3c", textClr: "#ffffff" };
         if (workshopName.includes("歌唱技巧")) return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
         if (workshopName.includes("Worship Leading")) return { text: "🟢 GREEN WRISTBAND", bg: "#2ecc71", textClr: "#ffffff" };
-        if (workshopName.includes("Music Production")) return { text: "🟠 ORANGE WRISTBAND", bg: "#e67e22", textClr: "#ffffff" };
-        
+        if (workshopName.includes("Music Arrangement and Production - 724 Band")) return { text: "🟠 ORANGE WRISTBAND", bg: "#e67e22", textClr: "#ffffff" };
+        if (workshopName.includes("Media Production in Church settings - Leon Lim")) return { text: "PINK WRISTBAND", bg: "#FFC0CB", textClr: "#ffffff" };
+
         return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
     }
 
