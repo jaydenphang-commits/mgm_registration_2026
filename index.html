@@ -62,7 +62,6 @@
         
         .workshop-title { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #7f8c8d; font-weight: bold; margin-top: 15px;}
         
-        /* The specific text description layout */
         .workshop-name-display {
             font-size: 16px;
             font-weight: bold;
@@ -141,6 +140,9 @@
         let html5QrCode;
         const statusMsg = document.getElementById('status-msg');
 
+        // ⚠️ PASTE YOUR COPIED GOOGLE APPS SCRIPT WEB APP URL HERE:
+        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby5owBWg3M80YHUZWmcP5yh9zYAAbEjb5j3dKlE2ivJmMCaUH4hZazeNX_G03UBlkoELw/exec";
+
         fetch('attendees_db.json')
             .then(response => {
                 if (!response.ok) throw new Error("Could not find attendees_db.json file.");
@@ -194,36 +196,67 @@
                 return;
             }
 
-            document.getElementById("lbl-name").innerText = guest.name;
-            document.getElementById("lbl-meta").innerText = `ID: ${guest.id} | Phone: ${guest.phone}`;
-            
-            if (guest.checkedIn) {
-                document.getElementById("checkin-warning").style.display = "block";
-            } else {
-                document.getElementById("checkin-warning").style.display = "none";
-                guest.checkedIn = true; 
-            }
+            statusMsg.innerText = "⏳ Verifying live check-in with Google Sheets...";
+            statusMsg.style.color = "#e67e22";
 
-            const concertBadge = document.getElementById("badge-concert");
-            if (guest.concert) {
-                concertBadge.className = "badge concert-badge";
-                concertBadge.innerHTML = "<span>🎟️ Concert Access:</span> <b>🎟️ GIVE CONCERT WRISTBAND</b>";
-            } else {
-                concertBadge.className = "badge no-concert-badge";
-                concertBadge.innerHTML = "<span>❌ No Concert Access:</span> <span>Workshop Only</span>";
-            }
+            // Make an atomic query to Google Sheet to check and check-in simultaneously
+            fetch(APPS_SCRIPT_URL, {
+                method: "POST",
+                headers: { "Content-Type": "text/plain" },
+                body: JSON.stringify({ name: guest.name, phone: guest.phone })
+            })
+            .then(res => res.json())
+            .then(result => {
+                document.getElementById("lbl-name").innerText = guest.name;
+                document.getElementById("lbl-meta").innerText = `ID: ${guest.id} | Phone: ${guest.phone}`;
+                
+                const warningBanner = document.getElementById("checkin-warning");
+                
+                if (result.status === "already_checked_in") {
+                    // IF ALREADY CHECKED IN: Turn banner Red and show alert text
+                    warningBanner.style.display = "block";
+                    warningBanner.innerText = "⚠️ ALREADY CHECKED IN!";
+                    warningBanner.style.backgroundColor = "#e74c3c";
+                } else if (result.status === "success") {
+                    // FIRST TIME CHECK IN: Turn banner green and show success confirmation
+                    warningBanner.style.display = "block";
+                    warningBanner.innerText = "✅ CHECK-IN SUCCESSFUL!";
+                    warningBanner.style.backgroundColor = "#2ecc71";
+                } else {
+                    // Not found or mapping error
+                    warningBanner.style.display = "block";
+                    warningBanner.innerText = "⚠️ NOT FOUND IN GOOGLE SHEET!";
+                    warningBanner.style.backgroundColor = "#f39c12";
+                }
 
-            // DYNAMIC UPDATE: Inject the actual workshop text title directly from the database record
-            document.getElementById("lbl-workshop-name").innerText = guest.workshop;
+                const concertBadge = document.getElementById("badge-concert");
+                if (guest.concert) {
+                    concertBadge.className = "badge concert-badge";
+                    concertBadge.innerHTML = "<span>🎟️ Concert Access:</span> <b>🎟️ GIVE CONCERT WRISTBAND</b>";
+                } else {
+                    concertBadge.className = "badge no-concert-badge";
+                    concertBadge.innerHTML = "<span>❌ No Concert Access:</span> <span>Workshop Only</span>";
+                }
 
-            const colorMapping = getWristbandColor(guest.workshop);
-            const box = document.getElementById("lbl-workshop-box");
-            box.innerText = colorMapping.text;
-            box.style.backgroundColor = colorMapping.bg;
-            box.style.color = colorMapping.textClr;
+                document.getElementById("lbl-workshop-name").innerText = guest.workshop;
 
-            document.getElementById("result-card").style.display = "block";
-            document.getElementById("scanner-container").style.display = "none";
+                const colorMapping = getWristbandColor(guest.workshop);
+                const box = document.getElementById("lbl-workshop-box");
+                box.innerText = colorMapping.text;
+                box.style.backgroundColor = colorMapping.bg;
+                box.style.color = colorMapping.textClr;
+
+                // Open new view layout card, hide the scanner container
+                document.getElementById("result-card").style.display = "block";
+                document.getElementById("scanner-container").style.display = "none";
+            })
+            .catch(err => {
+                console.error("Live verification crashed:", err);
+                alert("❌ Connection Error: Cloud verification timed out. Resuming camera.");
+                html5QrCode.resume();
+                statusMsg.innerText = "🎥 Camera active. Ready to scan!";
+                statusMsg.style.color = "green";
+            });
         }
 
         function resetScanner() {
