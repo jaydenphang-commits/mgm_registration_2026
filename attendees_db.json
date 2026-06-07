@@ -1878,5 +1878,21 @@
         "workshop": "Worship Leading - Timothy Lim and Keith Piong",
         "concert": false,
         "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1236",
+        "name": "Audrey Chan",
+        "phone": "=+60 16-819 2930",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
+    },
+    {
+        "id": "MGM2026_1237",
+        "name": "Jayden Phang",
+        "phone": "0167163328",
+        "workshop": "None of the above",
+        "concert": true,
+        "checkedIn": false
     }
 ]
