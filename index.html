@@ -228,18 +228,17 @@
             // 🚀 LIVE CLOUD SYNC: Send check-in payload to Google Sheet Web App
             if (APPS_SCRIPT_URL && APPS_SCRIPT_URL !== "YOUR_APPS_SCRIPT_WEB_APP_URL_HERE") {
                 statusMsg.innerText = "⏳ Syncing check-in status with Google Sheets...";
-                statusMsg.style.color = "#d35400"; // Orange status loading line
+                statusMsg.style.color = "#d35400"; 
+                
+                // Pack variables as URL form parameters (highly stable under no-cors mode)
+                const formData = new URLSearchParams();
+                formData.append("name", guest.name);
+                formData.append("phone", guest.phone);
                 
                 fetch(APPS_SCRIPT_URL, {
                     method: 'POST',
-                    mode: 'no-cors', // Bypasses Google security CORS redirection blocks on mobile browsers
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        name: guest.name,
-                        phone: guest.phone
-                    })
+                    mode: 'no-cors', 
+                    body: formData
                 })
                 .then(() => {
                     statusMsg.innerText = "✅ Successfully synced to Google Sheets!";
@@ -247,7 +246,7 @@
                 })
                 .catch(err => {
                     console.error("Cloud Sync Error: ", err);
-                    statusMsg.innerText = "⚠️ Network Delay: Scanned locally, but cloud sync paused.";
+                    statusMsg.innerText = "⚠️ Network Delay: Cloud sync paused.";
                     statusMsg.style.color = "red";
                 });
             }
