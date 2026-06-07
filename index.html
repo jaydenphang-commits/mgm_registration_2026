@@ -7,7 +7,7 @@
     <script src="https://unpkg.com/html5-qrcode"></script>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 0;
             padding: 15px;
             background-color: #f4f6f9;
@@ -16,9 +16,9 @@
         h1 { color: #2c3e50; margin-bottom: 5px; font-size: 24px;}
         .subtitle { color: #7f8c8d; margin-top: 0; margin-bottom: 20px; font-size: 14px;}
         
-        #scanner-container, #manual-lookup-container {
+        #scanner-container {
             max-width: 450px;
-            margin: 15px auto;
+            margin: 0 auto;
             background: white;
             padding: 15px;
             border-radius: 12px;
@@ -27,308 +27,302 @@
         #reader { width: 100%; border-radius: 8px; overflow: hidden; background: #eee;}
         
         #status-msg {
-            margin-top: 10px;
-            font-weight: bold;
+            margin: 10px;
             font-size: 14px;
-            color: green;
-            min-height: 20px;
-        }
-
-        /* Search Styles */
-        .search-box {
-            width: 100%;
-            padding: 12px;
-            box-sizing: border-box;
-            border: 2px solid #bdc3c7;
-            border-radius: 8px;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-        .search-box:focus {
-            border-color: #3498db;
-            outline: none;
-        }
-        #search-results {
-            text-align: left;
-            max-height: 250px;
-            overflow-y: auto;
-            margin-top: 5px;
-            border-radius: 6px;
-        }
-        .guest-item {
-            padding: 12px;
-            border-bottom: 1px solid #ecf0f1;
-            background: #fafafa;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-        }
-        .guest-item:hover { background: #f0f4f8; }
-        .guest-info { font-size: 14px; color: #2c3e50; }
-        .guest-name { font-weight: bold; }
-        .guest-phone { color: #7f8c8d; font-size: 12px; }
-        .btn-checkin {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            cursor: pointer;
+            color: #e67e22;
             font-weight: bold;
         }
-        .btn-checkin:hover { background-color: #2980b9; }
 
-        /* Results Card Layout */
         #result-card {
             max-width: 450px;
-            margin: 20px auto;
+            margin: 20px auto 0 auto;
             background: white;
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            display: none;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            display: none; 
             text-align: left;
         }
-        .card-header {
-            border-bottom: 2px solid #f4f6f9;
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-        }
-        .guest-title-id { font-size: 12px; color: #95a5a6; font-weight: bold; letter-spacing: 1px;}
-        .guest-title-name { font-size: 24px; color: #2c3e50; margin: 5px 0 2px 0; font-weight: 800;}
-        .guest-title-phone { font-size: 14px; color: #7f8c8d; margin: 0; font-family: monospace;}
+        .guest-name { font-size: 24px; font-weight: bold; color: #1a252f; margin-bottom: 5px; }
+        .guest-meta { font-size: 14px; color: #555; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;}
         
         .badge {
-            padding: 12px;
+            padding: 12px 15px;
             border-radius: 8px;
-            margin-bottom: 15px;
-            font-size: 14px;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            color: white;
         }
-        .concert-badge { background-color: #e8f8f5; color: #117a65; border: 1px solid #a3e4d7;}
-        .no-concert-badge { background-color: #fef9e7; color: #b7950b; border: 1px solid #f9e79f;}
+        .concert-badge { background-color: #2ecc71; }
+        .no-concert-badge { background-color: #95a5a6; }
         
-        .box-title { font-size: 11px; color: #95a5a6; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;}
-        .info-box {
+        .workshop-title { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #7f8c8d; font-weight: bold; margin-top: 15px;}
+        
+        .workshop-name-display {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 5px 0 10px 0;
             background: #f8f9fa;
-            border: 1px solid #eaeded;
-            border-radius: 8px;
-            padding: 12px;
-            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 4px solid #34495e;
+            border-radius: 4px;
         }
-        .w-box {
+
+        .wristband-alert {
+            font-size: 20px;
+            font-weight: 900;
             padding: 15px;
             border-radius: 8px;
-            font-size: 18px;
+            text-align: center;
+            border: 3px dashed #333;
+            margin-top: 5px;
+        }
+        
+        .warning-banner {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
             font-weight: bold;
             text-align: center;
-            margin-bottom: 20px;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 15px;
         }
-        .btn-reset {
+        
+        .action-btn {
             width: 100%;
-            background-color: #2c3e50;
+            padding: 12px;
+            background: #3498db;
             color: white;
             border: none;
-            padding: 14px;
             border-radius: 8px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            transition: background 0.2s;
+            margin-top: 15px;
         }
-        .btn-reset:hover { background-color: #1a252f; }
     </style>
 </head>
 <body>
 
-    <h1>MGM 2026 Registration</h1>
-    <p class="subtitle">Live QR Scanner & Manual Lookup Backoffice</p>
-
-    <div id="status-msg">🎥 Camera active. Ready to scan!</div>
+    <h1>MGM 2026 Registration App</h1>
+    <p class="subtitle">Volunteer Scanning Console</p>
 
     <div id="scanner-container">
+        <div style="margin-bottom: 15px; padding: 10px; background: #eef2f7; border-radius: 8px; display: flex; gap: 8px;">
+            <input type="text" id="txt-search" list="attendees-list" placeholder="Type Name or Phone..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px;">
+            <datalist id="attendees-list"></datalist>
+            <button onclick="manualSearchGuest()" style="padding: 10px 15px; background: #2c3e50; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px;">SEARCH</button>
+        </div>
+        <div id="status-msg">Connecting to database...</div>
         <div id="reader"></div>
     </div>
 
-    <div id="manual-lookup-container">
-        <div class="box-title" style="text-align: left;">Backup Search (No QR Code)</div>
-        <input type="text" id="search-input" class="search-box" placeholder="Type Name or Phone Number..." oninput="filterGuests()">
-        <div id="search-results"></div>
-    </div>
-
     <div id="result-card">
-        <div class="card-header">
-            <div id="badge-id" class="guest-title-id">MGM2026_0000</div>
-            <h2 id="lbl-name" class="guest-title-name">Loading Guest Details...</h2>
-            <p id="lbl-phone" class="guest-title-phone">0000000000</p>
+        <div id="checkin-warning" class="warning-banner" style="display:none;">⚠️ ALREADY CHECKED IN!</div>
+        <div class="guest-name" id="lbl-name">John Doe</div>
+        <div class="guest-meta" id="lbl-meta">ID: MGM2026_1001</div>
+        
+        <div id="badge-concert" class="badge concert-badge">
+            <span>🎟️ Concert Access:</span> <span>GIVE CONCERT WRISTBAND</span>
         </div>
 
-        <div id="badge-concert" class="badge"></div>
+        <div class="workshop-title">Registered Workshop Name:</div>
+        <div id="lbl-workshop-name" class="workshop-name-display">Workshop Text Goes Here</div>
 
-        <div class="box-title">Selected Workshop</div>
-        <div id="lbl-workshop-box" class="w-box">Loading color...</div>
+        <div class="workshop-title">Required Wristband Color:</div>
+        <div id="lbl-workshop-box" class="wristband-alert">Loading...</div>
 
-        <div class="box-title">Course Description</div>
-        <div id="lbl-workshop-name" class="info-box">Loading workshop item...</div>
-
-        <button class="btn-reset" onclick="resetScanner()">👉 TAP TO SCAN NEXT GUEST</button>
+        <button class="action-btn" onclick="resetScanner()">NEXT GUEST</button>
     </div>
 
     <script>
-        // 🛠️ CONFIGURATION TARGET ENDPOINTS
-        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgvkomDgtvesulWrgnQE6fPj4QW_CHFFqIQPSHxHuTRgNT0gibGuTP-_46MpythZYJ-g/exec";
-        const DATABASE_URL = "attendees_db.json";
+        // 1. PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgvkomDgtvesulWrgnQE6fPj4QW_CHFFqIQPSHxHuTRgNT0gibGuTP-_46MpythZYJ-g/exec";
 
-        let localDatabase = [];
-        const statusMsg = document.getElementById("status-msg");
+        let attendeesDatabase = [];
+    let html5QrCode;
+    const statusMsg = document.getElementById('status-msg');
 
-        // 📥 DOWNLOADING THE LOCAL MASTER RECORD
-        fetch(DATABASE_URL)
-            .then(res => res.json())
-            .then(data => {
-                localDatabase = data;
-                console.log(`Loaded ${localDatabase.length} entries into local lookup search cache.`);
-            })
-            .catch(err => {
-                console.error("Database fetch failed: ", err);
-                statusMsg.innerText = "⚠️ Error: Local database file failed to load.";
-                statusMsg.style.color = "red";
-            });
-
-        // 🎨 WRISTBAND COLOR ROUTING RULES
-        function getWristbandColor(workshopName) {
-            const w = String(workshopName).toLowerCase();
-            if (w.includes("vocal")) return { text: "RED WRISTBAND", bg: "#f9e7e7", textClr: "#c0392b" };
-            if (w.includes("worship leading")) return { text: "BLUE WRISTBAND", bg: "#eaf2f8", textClr: "#2980b9" };
-            if (w.includes("media production")) return { text: "YELLOW WRISTBAND", bg: "#fef9e7", textClr: "#b7950b" };
-            if (w.includes("band dynamics")) return { text: "GREEN WRISTBAND", bg: "#e8f8f5", textClr: "#117a65" };
-            if (w.includes("keyboard")) return { text: "PURPLE WRISTBAND", bg: "#f4ecf7", textClr: "#8e44ad" };
-            return { text: "ORANGE WRISTBAND (GENERAL)", bg: "#fdf2e9", textClr: "#d35400" };
-        }
-
-        // 🔍 LIVE REACTIVE SEARCH ENGINE FIELD
-        function filterGuests() {
-            const query = document.getElementById("search-input").value.trim().toLowerCase();
-            const resultsDiv = document.getElementById("search-results");
-            resultsDiv.innerHTML = ""; // Clear list
-
-            if (query.length < 2) return; // Wait until they type at least 2 letters
-
-            const filtered = localDatabase.filter(guest => {
-                return String(guest.name).toLowerCase().includes(query) || 
-                       String(guest.phone).replace(/[^0-9]/g, "").includes(query);
-            });
-
-            // Display up to 5 matching results
-            filtered.slice(0, 5).forEach(guest => {
-                const row = document.createElement("div");
-                row.className = "guest-item";
-                row.innerHTML = `
-                    <div class="guest-info">
-                        <div class="guest-name">${guest.name}</div>
-                        <div class="guest-phone">📱 ${guest.phone} | ID: ${guest.id}</div>
-                    </div>
-                    <button class="btn-checkin">Check-In</button>
-                `;
-                row.addEventListener("click", () => handleSelectGuest(guest));
-                resultsDiv.appendChild(row);
-            });
-        }
-
-        // 💼 DIRECTLY TRIGGER GUEST ATTENDANCE (Via Search or QR Scan)
-        function handleSelectGuest(guest) {
-            // Hide layouts, open results dashboard card
-            document.getElementById("search-input").value = "";
-            document.getElementById("search-results").innerHTML = "";
-            
-            displayGuestCard(guest);
-            
-            // Fire cloud background sync payload
-            if (APPS_SCRIPT_URL) {
-                statusMsg.innerText = "⏳ Syncing manual check-in status with Google Sheets...";
-                statusMsg.style.color = "#d35400"; 
-                
-                const formData = new URLSearchParams();
-                formData.append("name", guest.name);
-                formData.append("phone", guest.phone);
-                
-                fetch(APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors', 
-                    body: formData
-                })
-                .then(() => {
-                    statusMsg.innerText = `✅ Checked in: ${guest.name} successfully synced!`;
-                    statusMsg.style.color = "green";
-                })
-                .catch(err => {
-                    console.error("Cloud Sync Error: ", err);
-                    statusMsg.innerText = "⚠️ Network Delay: Sheet update queued.";
-                    statusMsg.style.color = "red";
-                });
-            }
-        }
-
-        // 🎥 QR CAMERA INSTANCE SEED
-        const html5QrCode = new Html5Qrcode("reader");
-        const config = { fps: 10, qrbox: { width: 250, height: 250 } };
-
-        html5QrCode.start({ facingMode: "environment" }, config, onScanSuccess);
-
-        function onScanSuccess(decodedText) {
-            html5QrCode.pause(true);
-            const cleanID = decodedText.trim();
-            
-            const matchedGuest = localDatabase.find(g => g.id === cleanID);
-
-            if (matchedGuest) {
-                handleSelectGuest(matchedGuest);
-            } else {
-                statusMsg.innerText = "❌ Unknown QR Code. ID not found in database.";
-                statusMsg.style.color = "red";
-                setTimeout(() => html5QrCode.resume(), 3000);
-            }
-        }
-
-        function displayGuestCard(guest) {
-            document.getElementById("badge-id").innerText = guest.id;
-            document.getElementById("lbl-name").innerText = guest.name;
-            document.getElementById("lbl-phone").innerText = "📱 " + guest.phone;
-
-            const concertBadge = document.getElementById("badge-concert");
-            if (guest.concert) {
-                concertBadge.className = "badge concert-badge";
-                concertBadge.innerHTML = "<b>🎟️ Concert Access:</b>&nbsp;GIVE CONCERT WRISTBAND";
-            } else {
-                concertBadge.className = "badge no-concert-badge";
-                concertBadge.innerHTML = "<b>❌ No Concert Access:</b>&nbsp;Workshop Ticket Only";
-            }
-
-            document.getElementById("lbl-workshop-name").innerText = guest.workshop;
-
-            const colorMapping = getWristbandColor(guest.workshop);
-            const box = document.getElementById("lbl-workshop-box");
-            box.innerText = colorMapping.text;
-            box.style.backgroundColor = colorMapping.bg;
-            box.style.color = colorMapping.textClr;
-
-            document.getElementById("result-card").style.display = "block";
-            document.getElementById("scanner-container").style.display = "none";
-            document.getElementById("manual-lookup-container").style.display = "none";
-        }
-
-        function resetScanner() {
-            document.getElementById("result-card").style.display = "none";
-            document.getElementById("scanner-container").style.display = "block";
-            document.getElementById("manual-lookup-container").style.display = "block";
-            statusMsg.innerText = "🎥 Camera active. Ready to scan!";
+    // Pull live data straight from Google Sheets on bootup
+    fetch(APPS_SCRIPT_URL)
+        .then(response => response.json())
+        .then(data => {
+            if(data.error) throw new Error(data.error);
+            attendeesDatabase = data;
+            statusMsg.innerText = "Live Cloud DB Loaded. Initializing camera...";
             statusMsg.style.color = "green";
+            
+            // Populate the autocomplete suggestions dropdown immediately
+            populateAutocomplete();
+            
+            initScanner();
+        })
+        .catch(err => {
+            statusMsg.style.color = "red";
+            statusMsg.innerText = "❌ Cloud DB Sync Error: " + err.message;
+            console.error(err);
+        });
+
+    // NEW: Function to dynamically feed the datalist options matrix
+    function populateAutocomplete() {
+        const datalist = document.getElementById("attendees-list");
+        datalist.innerHTML = ""; // Clear existing options if any
+        
+        attendeesDatabase.forEach(guest => {
+            // Option 1: Value is Name, Description is Phone
+            const nameOption = document.createElement("option");
+            nameOption.value = guest.name;
+            nameOption.innerHTML = `Phone: ${guest.phone}`;
+            datalist.appendChild(nameOption);
+
+            // Option 2: Value is Phone, Description is Name (helps lookups by numbers)
+            const phoneOption = document.createElement("option");
+            phoneOption.value = guest.phone;
+            phoneOption.innerHTML = `Name: ${guest.name}`;
+            datalist.appendChild(phoneOption);
+        });
+    }
+
+    function getWristbandColor(workshopName) {
+        if (!workshopName || workshopName.includes("None of the above")) {
+            return { text: "⚠️ NO WORKSHOP WRISTBAND", bg: "#f1f2f6", textClr: "#2f3542" };
+        }
+        if (workshopName.includes("Vocal Techniques")) return { text: "🔵 BLUE WRISTBAND", bg: "#3498db", textClr: "#ffffff" };
+        if (workshopName.includes("Band Dynamics")) return { text: "🔴 RED WRISTBAND", bg: "#e74c3c", textClr: "#ffffff" };
+        if (workshopName.includes("歌唱技巧")) return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
+        if (workshopName.includes("Worship Leading")) return { text: "🟢 GREEN WRISTBAND", bg: "#2ecc71", textClr: "#ffffff" };
+        if (workshopName.includes("Music Production")) return { text: "🟠 ORANGE WRISTBAND", bg: "#e67e22", textClr: "#ffffff" };
+        
+        return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
+    }
+
+    function initScanner() {
+        if (!document.getElementById("reader")) return;
+        html5QrCode = new Html5Qrcode("reader");
+        const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+        html5QrCode.start({ facingMode: "environment" }, config, onScanSuccess)
+        .catch(err => {
+            statusMsg.style.color = "red";
+            statusMsg.innerText = "🎥 Camera access error. Check permissions.";
+        });
+    }
+
+    function onScanSuccess(decodedText, decodedResult) {
+        html5QrCode.pause();
+        const guest = attendeesDatabase.find(g => g.id === decodedText.trim());
+        
+        if (!guest) {
+            alert("❌ Invalid QR Code! ID " + decodedText + " not in database.");
+            html5QrCode.resume();
+            return;
+        }
+        
+        processGuestCheckIn(guest);
+    }
+
+    function manualSearchGuest() {
+        const searchInput = document.getElementById("txt-search").value.trim().toLowerCase();
+        if (!searchInput) {
+            alert("Please enter a name or phone number to search.");
+            return;
+        }
+
+        const guest = attendeesDatabase.find(g => {
+            const normPhone = g.phone.replace(/[- ]/g, "");
+            const cleanInput = searchInput.replace(/[- ]/g, "");
+            return g.name.toLowerCase() === searchInput || normPhone === cleanInput || g.name.toLowerCase().includes(searchInput);
+        });
+
+        if (!guest) {
+            alert("❌ No attendee found matching that entry.");
+            return;
+        }
+
+        if (html5QrCode && html5QrCode.isScanning) {
+            html5QrCode.pause();
+        }
+
+        processGuestCheckIn(guest);
+    }
+
+    function processGuestCheckIn(guest) {
+        document.getElementById("lbl-name").innerText = guest.name;
+        document.getElementById("lbl-meta").innerText = `ID: ${guest.id} | Phone: ${guest.phone}`;
+        
+        if (guest.checkedIn) {
+            document.getElementById("checkin-warning").style.display = "block";
+        } else {
+            document.getElementById("checkin-warning").style.display = "none";
+            guest.checkedIn = true; 
+            syncCheckInToCloud(guest);
+        }
+
+        const concertBadge = document.getElementById("badge-concert");
+        if (guest.concert) {
+            concertBadge.className = "badge concert-badge";
+            concertBadge.innerHTML = "<span>🎟️ Concert Access:</span> <b>🎟️ GIVE CONCERT WRISTBAND</b>";
+        } else {
+            concertBadge.className = "badge no-concert-badge";
+            concertBadge.innerHTML = "<span>❌ No Concert Access:</span> <span>Workshop Only</span>";
+        }
+
+        document.getElementById("lbl-workshop-name").innerText = guest.workshop;
+
+        const colorMapping = getWristbandColor(guest.workshop);
+        const box = document.getElementById("lbl-workshop-box");
+        box.innerText = colorMapping.text;
+        box.style.backgroundColor = colorMapping.bg;
+        box.style.color = colorMapping.textClr;
+
+        document.getElementById("result-card").style.display = "block";
+        document.getElementById("scanner-container").style.display = "none";
+    }
+
+    function syncCheckInToCloud(guest) {
+        statusMsg.innerText = "⏳ Syncing check-in status with Google Sheets...";
+        statusMsg.style.color = "#d35400"; 
+        
+        const formData = new URLSearchParams();
+        formData.append("name", guest.name);
+        formData.append("phone", guest.phone);
+        
+        fetch(APPS_SCRIPT_URL, {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.json())
+        .then(resData => {
+            if(resData.status === "success") {
+                statusMsg.innerText = "✅ Checked-In successfully synced to Cloud!";
+                statusMsg.style.color = "green";
+            } else {
+                statusMsg.innerText = "⚠️ Cloud warning: " + resData.message;
+                statusMsg.style.color = "red";
+            }
+        })
+        .catch(err => {
+            console.error("Cloud Sync Error: ", err);
+            statusMsg.innerText = "❌ Network Error: Sync failed.";
+            statusMsg.style.color = "red";
+        });
+    }
+
+    function resetScanner() {
+        document.getElementById("txt-search").value = "";
+        document.getElementById("result-card").style.display = "none";
+        document.getElementById("scanner-container").style.display = "block";
+        statusMsg.innerText = "🎥 Camera active. Ready to scan!";
+        statusMsg.style.color = "green";
+        
+        if (html5QrCode && html5QrCode.isScanning) {
             html5QrCode.resume();
         }
+    }
     </script>
 </body>
 </html>
