@@ -148,55 +148,50 @@
     <script>
         // 1. PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgvkomDgtvesulWrgnQE6fPj4QW_CHFFqIQPSHxHuTRgNT0gibGuTP-_46MpythZYJ-g/exec";
-
-        let attendeesDatabase = [];
+    
+    let attendeesDatabase = [];
     let html5QrCode;
-    const statusMsg = document.getElementById('status-msg');
+    let statusMsg;
 
-    // Pull live data straight from Google Sheets on bootup
-    fetch(APPS_SCRIPT_URL)
-        .then(response => response.json())
-        .then(data => {
-            if(data.error) throw new Error(data.error);
-            attendeesDatabase = data;
-            statusMsg.innerText = "Live Cloud DB Loaded. Initializing camera...";
-            statusMsg.style.color = "green";
-            
-            // Populate the autocomplete suggestions dropdown immediately
-            populateAutocomplete();
-            
-            initScanner();
-        })
-        .catch(err => {
-            statusMsg.style.color = "red";
-            statusMsg.innerText = "❌ Cloud DB Sync Error: " + err.message;
-            console.error(err);
-        });
-
-    // NEW: Function to dynamically feed the datalist options matrix
-    function populateAutocomplete() {
-        const datalist = document.getElementById("attendees-list");
-        datalist.innerHTML = ""; // Clear existing options if any
+    // Wait safely for the HTML structure to fully render before looking for elements
+    document.addEventListener("DOMContentLoaded", function() {
+        statusMsg = document.getElementById('status-msg');
         
-        attendeesDatabase.forEach(guest => {
-            // Option 1: Value is Name, Description is Phone
-            const nameOption = document.createElement("option");
-            nameOption.value = guest.name;
-            nameOption.innerHTML = `Phone: ${guest.phone}`;
-            datalist.appendChild(nameOption);
+        if (statusMsg) {
+            statusMsg.innerText = "Connecting to live database...";
+        }
 
-            // Option 2: Value is Phone, Description is Name (helps lookups by numbers)
-            const phoneOption = document.createElement("option");
-            phoneOption.value = guest.phone;
-            phoneOption.innerHTML = `Name: ${guest.name}`;
-            datalist.appendChild(phoneOption);
-        });
-    }
-        // NEW: Active typing controller that renders results cleanly on the screen
+        // Pull live data straight from Google Sheets on bootup
+        fetch(APPS_SCRIPT_URL)
+            .then(response => response.json())
+            .then(data => {
+                if(data.error) throw new Error(data.error);
+                attendeesDatabase = data;
+                
+                if (statusMsg) {
+                    statusMsg.innerText = "Live Cloud DB Loaded. Initializing camera...";
+                    statusMsg.style.color = "green";
+                }
+                
+                initScanner();
+            })
+            .catch(err => {
+                if (statusMsg) {
+                    statusMsg.style.color = "red";
+                    statusMsg.innerText = "❌ Cloud DB Sync Error: " + err.message;
+                }
+                console.error(err);
+            });
+    });
+
+    // Active typing controller that renders results cleanly on the screen
     function handleSearchTyping() {
         const inputField = document.getElementById("txt-search");
-        const query = inputField.value.trim().toLowerCase();
         const suggestionsBox = document.getElementById("custom-suggestions");
+        
+        if (!inputField || !suggestionsBox) return;
+        
+        const query = inputField.value.trim().toLowerCase();
         
         // Clear out dropdown if the entry string is empty or too short
         if (!query || query.length < 1) {
@@ -206,13 +201,13 @@
         }
 
         // Filter rules: Prioritize strings starting with the letters typed (Prefix check)
-        // If nothing matches the beginning, look for a general inclusion match
         let matches = attendeesDatabase.filter(g => {
             const normPhone = g.phone.replace(/[- ]/g, "");
             const cleanQuery = query.replace(/[- ]/g, "");
             return g.name.toLowerCase().startsWith(query) || normPhone.startsWith(cleanQuery);
         });
 
+        // If nothing matches the beginning, look for a general inclusion match
         if (matches.length === 0) {
             matches = attendeesDatabase.filter(g => {
                 const normPhone = g.phone.replace(/[- ]/g, "");
@@ -235,6 +230,7 @@
                 rowItem.style.display = "flex";
                 rowItem.style.justifyContent = "space-between";
                 rowItem.style.alignItems = "center";
+                rowItem.style.textAlign = "left";
                 
                 // Text presentation elements
                 rowItem.innerHTML = `
@@ -271,22 +267,21 @@
     document.addEventListener("click", function(e) {
         const box = document.getElementById("custom-suggestions");
         const searchWrap = document.getElementById("txt-search");
-        if (e.target !== box && e.target !== searchWrap) {
+        if (box && searchWrap && e.target !== box && e.target !== searchWrap) {
             box.style.display = "none";
         }
     });
 
     function getWristbandColor(workshopName) {
         if (!workshopName || workshopName.includes("None of the above")) {
-            return { text: "⚠️ NO WORKSHOP WRISTBAND", bg: "#f1c40f", textClr: "#2f3542" };
+            return { text: "⚠️ NO WORKSHOP WRISTBAND", bg: "#f1f2f6", textClr: "#2f3542" };
         }
         if (workshopName.includes("Vocal Techniques")) return { text: "🔵 BLUE WRISTBAND", bg: "#3498db", textClr: "#ffffff" };
         if (workshopName.includes("Band Dynamics")) return { text: "🔴 RED WRISTBAND", bg: "#e74c3c", textClr: "#ffffff" };
         if (workshopName.includes("歌唱技巧")) return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
         if (workshopName.includes("Worship Leading")) return { text: "🟢 GREEN WRISTBAND", bg: "#2ecc71", textClr: "#ffffff" };
-        if (workshopName.includes("Music Arrangement and Production - 724 Band")) return { text: "🟠 ORANGE WRISTBAND", bg: "#e67e22", textClr: "#ffffff" };
-        if (workshopName.includes("Media Production in Church settings - Leon Lim")) return { text: "PINK WRISTBAND", bg: "#FFC0CB", textClr: "#ffffff" };
-
+        if (workshopName.includes("Music Production")) return { text: "🟠 ORANGE WRISTBAND", bg: "#e67e22", textClr: "#ffffff" };
+        
         return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
     }
 
@@ -296,8 +291,10 @@
         const config = { fps: 10, qrbox: { width: 250, height: 250 } };
         html5QrCode.start({ facingMode: "environment" }, config, onScanSuccess)
         .catch(err => {
-            statusMsg.style.color = "red";
-            statusMsg.innerText = "🎥 Camera access error. Check permissions.";
+            if (statusMsg) {
+                statusMsg.style.color = "red";
+                statusMsg.innerText = "🎥 Camera access error. Check permissions.";
+            }
         });
     }
 
@@ -314,6 +311,7 @@
         processGuestCheckIn(guest);
     }
 
+    // Manual search button fallback functionality logic loop
     function manualSearchGuest() {
         const searchInput = document.getElementById("txt-search").value.trim().toLowerCase();
         if (!searchInput) {
@@ -321,14 +319,15 @@
             return;
         }
 
+        // Look for exact field equivalence matching parameters safely
         const guest = attendeesDatabase.find(g => {
             const normPhone = g.phone.replace(/[- ]/g, "");
             const cleanInput = searchInput.replace(/[- ]/g, "");
-            return g.name.toLowerCase() === searchInput || normPhone === cleanInput || g.name.toLowerCase().includes(searchInput);
+            return g.name.toLowerCase() === searchInput || normPhone === cleanInput;
         });
 
         if (!guest) {
-            alert("❌ No attendee found matching that entry.");
+            alert("❌ No exact match found. Please type or select from the options dropdown instead.");
             return;
         }
 
@@ -403,6 +402,12 @@
 
     function resetScanner() {
         document.getElementById("txt-search").value = "";
+        const suggestionsBox = document.getElementById("custom-suggestions");
+        if (suggestionsBox) {
+            suggestionsBox.innerHTML = "";
+            suggestionsBox.style.display = "none";
+        }
+        
         document.getElementById("result-card").style.display = "none";
         document.getElementById("scanner-container").style.display = "block";
         statusMsg.innerText = "🎥 Camera active. Ready to scan!";
