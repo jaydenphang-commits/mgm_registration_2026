@@ -136,129 +136,134 @@
     </div>
 
     <script>
-        // 1. PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE (MUST END IN /exec)
-        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgvkomDgtvesulWrgnQE6fPj4QW_CHFFqIQPSHxHuTRgNT0gibGuTP-_46MpythZYJ-g/exec";
+        // 1. PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgvkomDgtvesulWrgnQE6fPj4QW_CHFFqIQPSHxHuTRgNT0gibGuTP-_46MpythZYJ-g/exec";
 
-        let attendeesDatabase = [];
-        let html5QrCode;
-        const statusMsg = document.getElementById('status-msg');
+    let attendeesDatabase = [];
+    let html5QrCode;
+    const statusMsg = document.getElementById('status-msg');
 
-        // Load the local database file
-        fetch('attendees_db.json')
-            .then(response => {
-                if (!response.ok) throw new Error("Could not find attendees_db.json file.");
-                return response.json();
-            })
-            .then(data => {
-                attendeesDatabase = data;
-                statusMsg.innerText = "Database Loaded. Initializing camera permission request...";
-                initScanner();
-            })
-            .catch(err => {
-                statusMsg.style.color = "red";
-                statusMsg.innerText = "❌ Database Error: " + err.message;
-            });
-
-        // Determine wristband classification rules
-        function getWristbandColor(workshopName) {
-            if (!workshopName || workshopName.includes("None of the above")) {
-                return { text: "⚠️ NO WORKSHOP WRISTBAND", bg: "#f1f2f6", textClr: "#2f3542" };
-            }
-            if (workshopName.includes("Vocal Techniques")) return { text: "🔵 BLUE WRISTBAND", bg: "#3498db", textClr: "#ffffff" };
-            if (workshopName.includes("Band Dynamics")) return { text: "🔴 RED WRISTBAND", bg: "#e74c3c", textClr: "#ffffff" };
-            if (workshopName.includes("歌唱技巧")) return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
-            if (workshopName.includes("Worship Leading")) return { text: "🟢 GREEN WRISTBAND", bg: "#2ecc71", textClr: "#ffffff" };
-            if (workshopName.includes("Music Production")) return { text: "🟠 ORANGE WRISTBAND", bg: "#e67e22", textClr: "#ffffff" };
-            
-            return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
-        }
-
-        function initScanner() {
-            if (!document.getElementById("reader")) return;
-            html5QrCode = new Html5Qrcode("reader");
-            const config = { fps: 10, qrbox: { width: 250, height: 250 } };
-            html5QrCode.start({ facingMode: "environment" }, config, onScanSuccess)
-            .catch(err => {
-                statusMsg.style.color = "red";
-                statusMsg.innerText = "🎥 Camera access error. Check your browser URL settings.";
-            });
-        }
-
-        function onScanSuccess(decodedText, decodedResult) {
-            html5QrCode.pause();
-            const guest = attendeesDatabase.find(g => g.id === decodedText.trim());
-            
-            if (!guest) {
-                alert("❌ Invalid QR Code! " + decodedText + " not found.");
-                html5QrCode.resume();
-                return;
-            }
-
-            // Display guest information on interface
-            document.getElementById("lbl-name").innerText = guest.name;
-            document.getElementById("lbl-meta").innerText = `ID: ${guest.id} | Phone: ${guest.phone}`;
-            
-            if (guest.checkedIn) {
-                document.getElementById("checkin-warning").style.display = "block";
-            } else {
-                document.getElementById("checkin-warning").style.display = "none";
-                guest.checkedIn = true; 
-            }
-
-            const concertBadge = document.getElementById("badge-concert");
-            if (guest.concert) {
-                concertBadge.className = "badge concert-badge";
-                concertBadge.innerHTML = "<span>🎟️ Concert Access:</span> <b>🎟️ GIVE CONCERT WRISTBAND</b>";
-            } else {
-                concertBadge.className = "badge no-concert-badge";
-                concertBadge.innerHTML = "<span>❌ No Concert Access:</span> <span>Workshop Only</span>";
-            }
-
-            document.getElementById("lbl-workshop-name").innerText = guest.workshop;
-
-            const colorMapping = getWristbandColor(guest.workshop);
-            const box = document.getElementById("lbl-workshop-box");
-            box.innerText = colorMapping.text;
-            box.style.backgroundColor = colorMapping.bg;
-            box.style.color = colorMapping.textClr;
-
-            document.getElementById("result-card").style.display = "block";
-            document.getElementById("scanner-container").style.display = "none";
-
-            // 🚀 LIVE CLOUD SYNC: Send check-in payload to Google Sheet Web App
-            if (APPS_SCRIPT_URL && APPS_SCRIPT_URL !== "YOUR_APPS_SCRIPT_WEB_APP_URL_HERE") {
-                statusMsg.innerText = "⏳ Syncing check-in status with Google Sheets...";
-                statusMsg.style.color = "#d35400"; 
-                
-                // Pack variables as URL form parameters (highly stable under no-cors mode)
-                const formData = new URLSearchParams();
-                formData.append("name", guest.name);
-                formData.append("phone", guest.phone);
-                
-                fetch(APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors', 
-                    body: formData
-                })
-                .then(() => {
-                    statusMsg.innerText = "✅ Successfully synced to Google Sheets!";
-                    statusMsg.style.color = "green";
-                })
-                .catch(err => {
-                    console.error("Cloud Sync Error: ", err);
-                    statusMsg.innerText = "⚠️ Network Delay: Cloud sync paused.";
-                    statusMsg.style.color = "red";
-                });
-            }
-        }
-
-        function resetScanner() {
-            document.getElementById("result-card").style.display = "none";
-            document.getElementById("scanner-container").style.display = "block";
-            statusMsg.innerText = "🎥 Camera active. Ready to scan!";
+    // Pull live data straight from Google Sheets on bootup
+    fetch(APPS_SCRIPT_URL)
+        .then(response => response.json())
+        .then(data => {
+            if(data.error) throw new Error(data.error);
+            attendeesDatabase = data;
+            statusMsg.innerText = "Live Cloud DB Loaded. Initializing camera...";
             statusMsg.style.color = "green";
-            html5QrCode.resume();
+            initScanner();
+        })
+        .catch(err => {
+            statusMsg.style.color = "red";
+            statusMsg.innerText = "❌ Cloud DB Sync Error: " + err.message;
+            console.error(err);
+        });
+
+    function getWristbandColor(workshopName) {
+        if (!workshopName || workshopName.includes("None of the above")) {
+            return { text: "⚠️ NO WORKSHOP WRISTBAND", bg: "#f1f2f6", textClr: "#2f3542" };
         }
+        if (workshopName.includes("Vocal Techniques")) return { text: "🔵 BLUE WRISTBAND", bg: "#3498db", textClr: "#ffffff" };
+        if (workshopName.includes("Band Dynamics")) return { text: "🔴 RED WRISTBAND", bg: "#e74c3c", textClr: "#ffffff" };
+        if (workshopName.includes("歌唱技巧")) return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
+        if (workshopName.includes("Worship Leading")) return { text: "🟢 GREEN WRISTBAND", bg: "#2ecc71", textClr: "#ffffff" };
+        if (workshopName.includes("Music Production")) return { text: "🟠 ORANGE WRISTBAND", bg: "#e67e22", textClr: "#ffffff" };
+        
+        return { text: "🟡 YELLOW WRISTBAND", bg: "#f1c40f", textClr: "#2c3e50" };
+    }
+
+    function initScanner() {
+        if (!document.getElementById("reader")) return;
+        html5QrCode = new Html5Qrcode("reader");
+        const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+        html5QrCode.start({ facingMode: "environment" }, config, onScanSuccess)
+        .catch(err => {
+            statusMsg.style.color = "red";
+            statusMsg.innerText = "🎥 Camera access error. Check permissions.";
+        });
+    }
+
+    function onScanSuccess(decodedText, decodedResult) {
+        html5QrCode.pause();
+        const guest = attendeesDatabase.find(g => g.id === decodedText.trim());
+        
+        if (!guest) {
+            alert("❌ Invalid QR Code! ID " + decodedText + " not in database.");
+            html5QrCode.resume();
+            return;
+        }
+
+        document.getElementById("lbl-name").innerText = guest.name;
+        document.getElementById("lbl-meta").innerText = `ID: ${guest.id} | Phone: ${guest.phone}`;
+        
+        // Check local loaded instance cache state
+        if (guest.checkedIn) {
+            document.getElementById("checkin-warning").style.display = "block";
+        } else {
+            document.getElementById("checkin-warning").style.display = "none";
+            guest.checkedIn = true; // Mark locally so duplicates in the same session fail
+            
+            // Send actual live change up to the sheet tracking row
+            syncCheckInToCloud(guest);
+        }
+
+        const concertBadge = document.getElementById("badge-concert");
+        if (guest.concert) {
+            concertBadge.className = "badge concert-badge";
+            concertBadge.innerHTML = "<span>🎟️ Concert Access:</span> <b>🎟️ GIVE CONCERT WRISTBAND</b>";
+        } else {
+            concertBadge.className = "badge no-concert-badge";
+            concertBadge.innerHTML = "<span>❌ No Concert Access:</span> <span>Workshop Only</span>";
+        }
+
+        document.getElementById("lbl-workshop-name").innerText = guest.workshop;
+
+        const colorMapping = getWristbandColor(guest.workshop);
+        const box = document.getElementById("lbl-workshop-box");
+        box.innerText = colorMapping.text;
+        box.style.backgroundColor = colorMapping.bg;
+        box.style.color = colorMapping.textClr;
+
+        document.getElementById("result-card").style.display = "block";
+        document.getElementById("scanner-container").style.display = "none";
+    }
+
+    function syncCheckInToCloud(guest) {
+        statusMsg.innerText = "⏳ Syncing check-in status with Google Sheets...";
+        statusMsg.style.color = "#d35400"; 
+        
+        const formData = new URLSearchParams();
+        formData.append("name", guest.name);
+        formData.append("phone", guest.phone);
+        
+        fetch(APPS_SCRIPT_URL, {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.json())
+        .then(resData => {
+            if(resData.status === "success") {
+                statusMsg.innerText = "✅ Checked-In successfully synced to Cloud!";
+                statusMsg.style.color = "green";
+            } else {
+                statusMsg.innerText = "⚠️ Cloud warning: " + resData.message;
+                statusMsg.style.color = "red";
+            }
+        })
+        .catch(err => {
+            console.error("Cloud Sync Error: ", err);
+            statusMsg.innerText = "❌ Network Error: Sync failed.";
+            statusMsg.style.color = "red";
+        });
+    }
+
+    function resetScanner() {
+        document.getElementById("result-card").style.display = "none";
+        document.getElementById("scanner-container").style.display = "block";
+        statusMsg.innerText = "🎥 Camera active. Ready to scan!";
+        statusMsg.style.color = "green";
+        html5QrCode.resume();
+    }
     </script>
 </body>
 </html>

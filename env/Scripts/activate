@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\User\Documents\Coding Projects\QR Code\env"
+VIRTUAL_ENV="C:\Users\Jayden Phang\Documents\MGM QR Code\mgm_registration_2026\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
